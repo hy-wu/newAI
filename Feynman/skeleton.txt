@@ -1,0 +1,35 @@
+Chapter 1: Introduction
+  ├─ 1.1 The Gap Between Math and Code
+  ├─ 1.2 The Diagrammatic Vision / Feynman Diagram Vision for AI
+  └─ 1.3 Scope and Outline
+
+Chapter 2: Foundations — Physical and Mathematical Toolbox
+  ├─ 2.1 Feynman Diagrams and Quantum Field Theory
+  ├─ 2.2 Tensor Networks and Diagrammatic Algebra
+  ├─ 2.3 Diagrammatic Languages for Model Architecture
+  └─ 2.4 The Physical Mathematician's Toolbox
+
+Chapter 3: Neural Network Theory Through the Feynman Lens
+  ├─ 3.1 Neural Networks as Field Theories
+  ├─ 3.2 Diagrammatic Theory of Deep Neural Networks
+  ├─ 3.3 Model Architectures as Feynman Diagrams
+  └─ 3.4 Field-Theoretic Perspectives
+
+Chapter 4: Attention Mechanisms and Path Integrals
+  ├─ 4.1 Path Integral Formulation of Attention and Transformers
+  └─ 4.2 Attention as Statistical Physics
+
+Chapter 5: Deep Learning Compilation and Optimization Infrastructure
+  ├─ 5.1 Intermediate Representations for Deep Learning
+  ├─ 5.2 Compilation and Auto-Optimization of Tensor Programs
+  ├─ 5.3 Graph Rewriting, Superoptimization, and Equality Saturation
+  └─ 5.4 Neural Architecture Search and Differentiable Programming
+
+Chapter 6: Toward a Unified Feynman Diagram Compiler
+  ├─ 6.1 Compiling Diagrammatic Representations to GPU
+  ├─ 6.2 A Unified Diagrammatic Compiler for AI
+  └─ 6.3 Cross-Domain Analogies as Inductive Biases
+
+Chapter 7: Conclusion and Outlook
+  ├─ 7.1 Open Problems, Benchmarks, and Outlook
+  └─ 7.2 Conclusion: The Diagram is the Code
