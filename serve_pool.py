@@ -62,6 +62,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   .btn { display: inline-block; padding: 5px 12px; background: #1a73e8; color: #fff !important;
           text-decoration: none !important; border-radius: 4px; font-size: 0.85em; }
   .btn:hover { background: #1557b0; }
+  .btn-search { background: #0078d4; cursor: pointer; }
+  .btn-search:hover { background: #005a9e; }
   .pdf-viewer { margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; background: #eee; }
   .pdf-viewer embed { display: block; width: 100%; height: 500px; }
   .figures { margin: 10px 0; }
@@ -175,10 +177,10 @@ function renderNarrow(filter) {
     out += '<div class="paper-body">';
     out += '<div class="paper-meta"><span>Status: <b>'+escapeHtml(p.st)+'</b></span><span>arXiv:'+escapeHtml(p.a)+'</span></div>';
     if (p.pdf) {
-      out += '<div class="paper-links"><a href="'+p.pdf+'" target="_blank" class="btn">Open PDF</a></div>';
+      out += '<div class="paper-links"><a href="'+p.pdf+'" target="_blank" class="btn">New tab</a> <a class="btn btn-search" data-pid="'+p.id+'" onclick="searchBing(this.dataset.pid)">Bing</a></div>';
       out += '<div class="pdf-viewer"><embed src="'+p.pdf+'#view=FitH" type="application/pdf"></div>';
     } else {
-      out += '<div class="paper-links"><span style="color:#999">PDF not available</span></div>';
+      out += '<div class="paper-links"><span style="color:#999">PDF not available</span> <a class="btn btn-search" data-pid="'+p.id+'" onclick="searchBing(this.dataset.pid)">Bing</a></div>';
     }
     if (p.figs && p.figs.length) {
       out += '<div class="figures"><h4>Extracted Figures</h4><div class="figure-grid">';
@@ -238,12 +240,15 @@ function renderWide(filter) {
   out += '<div class="wide-center" id="wide-center">';
   var sel = getPaperById(selectedId);
   if (sel) {
+    var searchBtnWide = '<a class="btn btn-search" data-pid="'+sel.id+'" onclick="searchBing(this.dataset.pid)">Bing</a>';
     if (sel.pdf) {
       out += '<div class="pdf-toolbar"><span class="pt-title">['+sel.id+'] '+escapeHtml(sel.t)+'</span>';
-      out += '<a href="'+sel.pdf+'" target="_blank" class="btn">Open PDF</a></div>';
+      out += '<a href="'+sel.pdf+'" target="_blank" class="btn">New Tab</a> '+searchBtnWide+'</div>';
       out += '<div class="pdf-viewer"><embed src="'+sel.pdf+'#view=FitH" type="application/pdf"></div>';
     } else {
-      out += '<div class="placeholder">PDF not available for this paper</div>';
+      out += '<div style="text-align:center;padding:40px 16px">';
+      out += '<div class="placeholder" style="margin-bottom:16px">PDF not available for this paper</div>';
+      out += searchBtnWide+'</div>';
     }
   } else {
     out += '<div class="placeholder">Select a paper from the list</div>';
@@ -407,6 +412,13 @@ function loadPanelWidths() {
 // ── init ─────────────────────────────────────────────────────────────
 document.addEventListener('keydown', onKeyNav);
 window.addEventListener('resize', onResize);
+
+function searchBing(id) {
+  var p = getPaperById(parseInt(id, 10));
+  if (!p) return;
+  var q = encodeURIComponent(p.t);
+  window.open('https://www.bing.com/search?q=' + q, '_blank');
+}
 
 // clean and index paper data for search
 PAPERS.forEach(function(p) {

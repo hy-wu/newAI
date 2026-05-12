@@ -1,4 +1,12 @@
 BIIC/
+Feynman/*.aux
+Feynman/*.bbl
+Feynman/*.blg
+Feynman/*.log
+Feynman/*.out
+Feynman/*.run.xml
+Feynman/*-blx.bib
+Feynman/*.pdf
 .env
 .na-claude.toml.lock
 na-claude.toml
