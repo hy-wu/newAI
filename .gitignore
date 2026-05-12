@@ -1,1 +1,5 @@
 BIIC/
+.env
+.na-claude.toml.lock
+na-claude.toml
+.snowcite/

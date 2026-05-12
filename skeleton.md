@@ -29,6 +29,12 @@
 - distribution -> natural (auto) exp calculation (softmax)
 - 双层化以增强 token 占比差异
 - redefine AI infra with Feynmann diagram
+  - Feynman Diagrams as Computational Graphs (Hou 2024): diagram = computational graph natively
+  - Transformer as Path Integral (Paeng 2025, IEEE Access): attention = sum over paths, FFN = time evolution
+  - Graph Field Integrators (Choromanski 2026, Princeton): unifying transformers + N-body + Feynman path integrals
+  - NCoder (Berman 2024): n-point correlation functions as latent representation
+  - Finite-width NTK from Feynman diagrams (Guillen 2025)
+  - external line → token, vertex → attention, loop → recurrence, diagram order → layer depth
 
 ### noted in my Phone
 
