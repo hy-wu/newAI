@@ -283,7 +283,14 @@ function getPaperById(id) {
 function selectPaper(id) {
   selectedId = id;
   var f = getFilter();
+  var scrollTop = 0;
+  var listEl = document.getElementById('wide-list');
+  if (listEl) scrollTop = listEl.scrollTop;
   renderWide(f);
+  setTimeout(function() {
+    var newList = document.getElementById('wide-list');
+    if (newList && scrollTop > 0) newList.scrollTop = scrollTop;
+  }, 0);
 }
 
 function toggleTexWide() {
