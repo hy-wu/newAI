@@ -78,6 +78,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   .tex-section { margin: 10px 0; }
   .tex-toggle { color: #1a73e8; cursor: pointer; font-size: 0.85em; }
   .tex-toggle:hover { text-decoration: underline; }
+  .notes-section { margin: 10px 0; padding-top: 6px; border-top: 1px solid #eee; }
+  .notes-section h4 { margin-bottom: 6px; color: #555; font-size: 0.9em; }
+  .note-item { background: #f0f6ff; border-left: 3px solid #1a73e8; padding: 6px 10px; margin-bottom: 4px; font-size: 0.85em; border-radius: 0 4px 4px 0; }
 
   /* ========== Wide layout (>=1200px, 3-column) ========== */
   .wide-body { height: 100vh; display: flex; flex-direction: column; }
@@ -190,7 +193,13 @@ function renderNarrow(filter) {
     out += '<div class="tex-section">';
     out += '<h4>TeX Source <span class="tex-toggle" onclick="toggleTexNarrow(this)">(show/hide)</span></h4>';
     out += '<pre style="display:none">'+(p.tc || 'No TeX source available')+'</pre>';
-    out += '</div></div></div>';
+    out += '</div>';
+    if (p.notes && p.notes.length) {
+      out += '<div class="notes-section"><h4>Notes</h4>';
+      p.notes.forEach(function(n) { out += '<div class="note-item">'+escapeHtml(n)+'</div>'; });
+      out += '</div>';
+    }
+    out += '</div></div>';
   });
   out += '</div>';
   out += '<div class="subtitle">'+shown+'/'+PAPERS.length+' papers &middot; Pool: '+POOL_PATH+'</div>';
@@ -270,6 +279,11 @@ function renderWide(filter) {
     out += '<h4>TeX Source <span class="tex-toggle" onclick="toggleTexWide()">(show/hide)</span></h4>';
     out += '<pre id="tex-wide" style="display:none">'+(sel.tc || 'No TeX source available')+'</pre>';
     out += '</div>';
+    if (sel.notes && sel.notes.length) {
+      out += '<div class="notes-section"><h4>Notes</h4>';
+      sel.notes.forEach(function(n) { out += '<div class="note-item">'+escapeHtml(n)+'</div>'; });
+      out += '</div>';
+    }
   } else {
     out += '<div class="placeholder">Select a paper to view figures</div>';
   }
@@ -503,6 +517,25 @@ def build_papers_json(pool_dir, db_papers, disk_info):
     papers_data = []
     disk_map = {d["arxiv_id"]: d for d in disk_info}
 
+    # Fetch notes for all papers
+    notes_map = {}
+    if DB.exists():
+        try:
+            conn = sqlite3.connect(str(DB))
+            paper_ids = [p["id"] for p in db_papers]
+            if paper_ids:
+                placeholders = ",".join("?" * len(paper_ids))
+                cur = conn.execute(
+                    f"SELECT paper_id, type, text FROM notes WHERE paper_id IN ({placeholders})",
+                    paper_ids,
+                )
+                for row in cur.fetchall():
+                    pid = row[0]
+                    notes_map.setdefault(pid, []).append(f"[{row[1]}] {row[2]}")
+            conn.close()
+        except Exception:
+            pass
+
     for p in db_papers:
         source_id = p.get("source_id", "") or ""
         arxiv_id = source_id.split("v")[0] if "v" in source_id else source_id
@@ -524,6 +557,7 @@ def build_papers_json(pool_dir, db_papers, disk_info):
             "pdf": pdf_path,
             "figs": figs,
             "tc": tex_content,
+            "notes": notes_map.get(p["id"], []),
         })
 
     return papers_data
@@ -570,11 +604,31 @@ class PoolHandler(SimpleHTTPRequestHandler):
         print(f"  [{self.address_string()}] {args[0]} {args[1]} {args[2]}")
 
 
+def generate_static_html(pool_dir):
+    """Generate a standalone static HTML file for GitHub Pages deployment."""
+    db_papers = get_papers_from_db()
+    disk_info = scan_pool(pool_dir)
+    papers_data = build_papers_json(pool_dir, db_papers, disk_info)
+
+    # Rewrite PDF links to arXiv URLs (local files won't exist on static host)
+    for p in papers_data:
+        if p["arxiv_id"]:
+            p["pdf"] = f"https://arxiv.org/pdf/{p['arxiv_id']}.pdf"
+        else:
+            p["pdf"] = None
+
+    page = HTML_TEMPLATE.replace("__PAPERS_JSON__", json.dumps(papers_data, ensure_ascii=False))
+    page = page.replace("__POOL_PATH__", "static export — arXiv PDFs")
+    return page
+
+
 def main():
     parser = argparse.ArgumentParser(description="Paper pool browser server")
     parser.add_argument("--port", type=int, default=8899, help="Port (default: 8899)")
     parser.add_argument("--pool", default=r"F:\文献池", help="Pool directory")
     parser.add_argument("--no-browser", action="store_true", help="Don't auto-open browser")
+    parser.add_argument("--lan", action="store_true", help="Bind to 0.0.0.0 for LAN/mobile access")
+    parser.add_argument("--export", type=str, help="Export static HTML to PATH (e.g. docs/index.html for GitHub Pages)")
     args = parser.parse_args()
 
     pool_dir = Path(args.pool)
@@ -583,15 +637,31 @@ def main():
         print("Run fetch_papers.py first to populate the pool.")
         sys.exit(1)
 
+    # Static export mode
+    if args.export:
+        html = generate_static_html(pool_dir)
+        export_path = Path(args.export)
+        export_path.parent.mkdir(parents=True, exist_ok=True)
+        export_path.write_text(html, encoding="utf-8")
+        print(f"\n  Static HTML exported to: {export_path.resolve()}")
+        print(f"  Open in browser or deploy to GitHub Pages.")
+        return
+
+    bind_host = "0.0.0.0" if args.lan else "127.0.0.1"
     def make_handler(*handler_args):
         return PoolHandler(*handler_args, pool_dir=pool_dir)
 
-    server = HTTPServer(("127.0.0.1", args.port), make_handler)
+    server = HTTPServer((bind_host, args.port), make_handler)
     url = f"http://127.0.0.1:{args.port}"
 
     print(f"\n  Paper Pool server started!")
-    print(f"  Open in browser: {url}")
-    print(f"  Pool directory:  {pool_dir}")
+    print(f"  URL:     {url}")
+    if args.lan:
+        import socket
+        hostname = socket.gethostname()
+        local_ip = socket.gethostbyname(hostname)
+        print(f"  LAN:     http://{local_ip}:{args.port}  (access from phone/tablet on same WiFi)")
+    print(f"  Pool:    {pool_dir}")
     print(f"  Press Ctrl+C to stop.\n")
 
     if not args.no_browser:
