@@ -1,0 +1,1410 @@
+acclaviondstring:
+  type: article
+  title: "String diagram rewriting : applications in category and proof theory"
+  author:
+    - "Matteo Acclavio"
+  serial-number:
+    doi: "10.70675/83f48b85zdd67z4e09zba83zb54adcaaaa6e"
+
+riverarovelondmedical:
+  type: article
+  title: "Medical Image Segmentation using a Self-organizing Neural Network and Clifford Geometric Algebra"
+  author:
+    - "J. Rivera-Rovelo"
+    - "E. Bayro-Corrochano"
+  parent:
+    type: periodical
+    title: "The 2006 IEEE International Joint Conference on Neural Network Proceedings"
+  serial-number:
+    doi: "10.1109/ijcnn.2006.1716584"
+
+murtagh2008from:
+  type: web
+  title: "From Data to the p-Adic or Ultrametric Model"
+  author:
+    - "Fionn Murtagh"
+  date: "2008"
+  parent:
+    type: periodical
+    title: "p-Adic Numbers, Ultrametric Analysis and Applications, 1, 58-68, 2009"
+  serial-number:
+    doi: "10.1134/s2070046609010063"
+
+tate2011equality:
+  type: article
+  title: "Equality Saturation: A New Approach to Optimization"
+  author:
+    - "Ross Tate"
+    - "Michael Stepp"
+    - "Zachary Tatlock"
+    - "Sorin Lerner"
+  date: "2011"
+  parent:
+    type: periodical
+    title: "Logical Methods in Computer Science"
+  serial-number:
+    doi: "10.2168/lmcs-7(1:10)2011"
+
+bianchi2013storage:
+  type: article
+  title: "Storage and retrieval of ultrametric patterns in a network of CA1 neurons of the hippocampus"
+  author:
+    - "D. Bianchi"
+    - "M. Piersanti"
+    - "B. Tirozzi"
+  date: "2013"
+  parent:
+    type: periodical
+    title: "P-Adic Numbers, Ultrametric Analysis, and Applications"
+  serial-number:
+    doi: "10.1134/s207004661304002x"
+
+marsden2014category:
+  type: web
+  title: "Category Theory Using String Diagrams"
+  author:
+    - "Dan Marsden"
+  date: "2014"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.1401.7220"
+
+ansel2014opentuner:
+  type: article
+  title: "OpenTuner"
+  author:
+    - "Jason Ansel"
+    - "Shoaib Kamil"
+    - "Kalyan Veeramachaneni"
+    - "Jonathan Ragan‐Kelley"
+    - "Jeffrey Bosboom"
+    - "Una-May O’Reilly"
+    - "Saman Amarasinghe"
+  date: "2014"
+  serial-number:
+    doi: "10.1145/2628071.2628092"
+
+polajnar2015an:
+  type: article
+  title: "An Exploration of Discourse-Based Sentence Spaces for Compositional Distributional Semantics"
+  author:
+    - "Tamara Polajnar"
+    - "Laura Rimell"
+    - "Stephen Clark"
+  date: "2015"
+  serial-number:
+    doi: "10.18653/v1/w15-2701"
+
+zoph2016neural:
+  type: web
+  title: "Neural Architecture Search with Reinforcement Learning"
+  author:
+    - "Barret Zoph"
+    - "Quoc V. Le"
+  date: "2016"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.1611.01578"
+
+sadrzadeh2016quantifier:
+  type: web
+  title: "Quantifier Scope in Categorical Compositional Distributional Semantics"
+  author:
+    - "Mehrnoosh Sadrzadeh"
+  date: "2016"
+  parent:
+    type: periodical
+    title: "EPTCS 221, 2016, pp. 49-57"
+  serial-number:
+    doi: "10.4204/eptcs.221.6"
+
+kartsaklis2016coordination:
+  type: web
+  title: "Coordination in Categorical Compositional Distributional Semantics"
+  author:
+    - "Dimitri Kartsaklis"
+  date: "2016"
+  parent:
+    type: periodical
+    title: "EPTCS 221, 2016, pp. 29-38"
+  serial-number:
+    doi: "10.4204/eptcs.221.4"
+
+Liu2017ProgressiveNA:
+  type: article
+  title: "Progressive Neural Architecture Search"
+  author:
+    - "Chenxi Liu"
+    - "Barret Zoph"
+    - "Jonathon Shlens"
+    - "Wei Hua"
+    - "Li-Jia Li"
+    - "Li Fei-Fei"
+    - "A. Yuille"
+    - "Jonathan Huang"
+    - "K. Murphy"
+  date: "2017"
+  parent:
+    type: periodical
+    title: "European Conference on Computer Vision"
+  serial-number:
+    doi: "10.1007/978-3-030-01246-5_2"
+
+ragankelley2017halide:
+  type: article
+  title: "Halide"
+  author:
+    - "Jonathan Ragan-Kelley"
+    - "Andrew Adams"
+    - "Dillon Sharlet"
+    - "Connelly Barnes"
+    - "Sylvain Paris"
+    - "Marc Levoy"
+    - "Saman Amarasinghe"
+    - "Frédo Durand"
+  date: "2017"
+  parent:
+    type: periodical
+    title: "Communications of the ACM"
+  serial-number:
+    doi: "10.1145/3150211"
+
+chen2018tvm:
+  type: article
+  title: "TVM: an automated end-to-end optimizing compiler for deep learning"
+  author:
+    - "Tianqi Chen"
+    - "Thierry Moreau"
+    - "Ziheng Jiang"
+    - "Lianmin Zheng"
+    - "Eddie Yan"
+    - "Meghan Cowan"
+    - "Haichen Shen"
+    - "Leyuan Wang"
+    - "Yuwei Hu"
+    - "Luís Ceze"
+    - "Carlos Guestrin"
+    - "Arvind Krishnamurthy"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "Operating Systems Design and Implementation"
+  serial-number:
+    doi: "10.5555/3291168.3291211"
+
+chen2018tvma:
+  type: web
+  title: "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning"
+  author:
+    - "Tianqi Chen"
+    - "Thierry Moreau"
+    - "Ziheng Jiang"
+    - "Lianmin Zheng"
+    - "Eddie Yan"
+    - "Meghan Cowan"
+    - "Haichen Shen"
+    - "Leyuan Wang"
+    - "Yuwei Hu"
+    - "Luís Ceze"
+    - "Carlos Guestrin"
+    - "Arvind Krishnamurthy"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.1802.04799"
+
+Tan2018MnasNetPN:
+  type: article
+  title: "MnasNet: Platform-Aware Neural Architecture Search for Mobile"
+  author:
+    - "Mingxing Tan"
+    - "Bo Chen"
+    - "Ruoming Pang"
+    - "Vijay Vasudevan"
+    - "Quoc V. Le"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "Computer Vision and Pattern Recognition"
+  serial-number:
+    doi: "10.1109/cvpr.2019.00293"
+
+Wu2018FBNetHE:
+  type: article
+  title: "FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search"
+  author:
+    - "Bichen Wu"
+    - "Xiaoliang Dai"
+    - "Peizhao Zhang"
+    - "Yanghan Wang"
+    - "Fei Sun"
+    - "Yiming Wu"
+    - "Yuandong Tian"
+    - "Péter Vajda"
+    - "Yangqing Jia"
+    - "K. Keutzer"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "Computer Vision and Pattern Recognition"
+  serial-number:
+    doi: "10.1109/cvpr.2019.01099"
+
+elsken2018neural:
+  type: web
+  title: "Neural Architecture Search: A Survey"
+  author:
+    - "Thomas Elsken"
+    - "Jan Hendrik Metzen"
+    - "Frank Hutter"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.1808.05377"
+
+cai2018proxylessnas:
+  type: web
+  title: "ProxylessNAS: Direct Neural Architecture Search on Target Task and\\n Hardware"
+  author:
+    - "Han Cai"
+    - "Ligeng Zhu"
+    - "Song Han"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.1812.00332"
+
+Pham2018EfficientNA:
+  type: article
+  title: "Efficient Neural Architecture Search via Parameter Sharing"
+  author:
+    - "Hieu Pham"
+    - "M. Guan"
+    - "Barret Zoph"
+    - "Quoc V. Le"
+    - "J. Dean"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "International Conference on Machine Learning"
+
+Roesch2018RelayAN:
+  type: article
+  title: "Relay: a new IR for machine learning frameworks"
+  author:
+    - "Jared Roesch"
+    - "Steven Lyubomirsky"
+    - "Logan Weber"
+    - "Josh Pollock"
+    - "Marisa Kirisame"
+    - "Tianqi Chen"
+    - "Zachary Tatlock"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "MAPL@PLDI"
+  serial-number:
+    doi: "10.1145/3211346.3211348"
+
+Baghdadi2018TiramisuAP:
+  type: article
+  title: "Tiramisu: A Polyhedral Compiler for Expressing Fast and Portable Code"
+  author:
+    - "Riyadh Baghdadi"
+    - "Jessica Ray"
+    - "Malek Ben Romdhane"
+    - "Emanuele Del Sozzo"
+    - "Abdurrahman Akkas"
+    - "Yunming Zhang"
+    - "Patricia Suriana"
+    - "Shoaib Kamil"
+    - "Saman P. Amarasinghe"
+  date: "2018"
+  parent:
+    type: periodical
+    title: "IEEE/ACM International Symposium on Code Generation and Optimization"
+  serial-number:
+    doi: "10.1109/cgo.2019.8661197"
+
+Baghdadi2018TiramisuA:
+  type: article
+  title: "Tiramisu : A Polyhedral Compiler with A Scheduling Language for Targeting High Performance Systems Riyadh"
+  author:
+    - "Riyadh Baghdadi"
+    - "Jessica Ray"
+    - "Malek Ben Romdhane"
+    - "Emanuele Del Sozzo"
+    - "Patricia Suriana"
+    - "Abdurrahman Akkas"
+    - "Shoaib Kamil"
+    - "Yunming Zhang"
+    - "Saman P. Amarasinghe"
+  date: "2018"
+
+Baghdadi2018TiramisuAC:
+  type: article
+  title: "Tiramisu: A Code Optimization Framework for High Performance Systems"
+  author:
+    - "Riyadh Baghdadi"
+    - "Jessica Ray"
+    - "Malek Ben Romdhane"
+    - "Emanuele Del Sozzo"
+    - "Patricia Suriana"
+    - "Shoaib Kamil"
+    - "Saman P. Amarasinghe"
+  date: "2018"
+
+Guo2019SinglePO:
+  type: article
+  title: "Single Path One-Shot Neural Architecture Search with Uniform Sampling"
+  author:
+    - "Zichao Guo"
+    - "Xiangyu Zhang"
+    - "Haoyuan Mu"
+    - "Wen Heng"
+    - "Zechun Liu"
+    - "Yichen Wei"
+    - "Jian Sun"
+  date: "2019"
+  parent:
+    type: periodical
+    title: "European Conference on Computer Vision"
+  serial-number:
+    doi: "10.1007/978-3-030-58517-4_32"
+
+elsken2019neural:
+  type: article
+  title: "Neural Architecture Search"
+  author:
+    - "Thomas Elsken"
+    - "Jan Hendrik Metzen"
+    - "Frank Hutter"
+  date: "2019"
+  parent:
+    type: periodical
+    title: "The Springer series on challenges in machine learning"
+  serial-number:
+    doi: "10.1007/978-3-030-05318-5_3"
+
+jin2019autokeras:
+  type: article
+  title: "Auto-Keras: An Efficient Neural Architecture Search System"
+  author:
+    - "Haifeng Jin"
+    - "Qingquan Song"
+    - "Xia Hu"
+  date: "2019"
+  serial-number:
+    doi: "10.1145/3292500.3330648"
+
+liu2019autodeeplab:
+  type: article
+  title: "Auto-DeepLab: Hierarchical Neural Architecture Search for Semantic Image Segmentation"
+  author:
+    - "Chenxi Liu"
+    - "Liang-Chieh Chen"
+    - "Florian Schroff"
+    - "Hartwig Adam"
+    - "Wei Hua"
+    - "Alan Yuille"
+    - "Li Fei-Fei"
+  date: "2019"
+  serial-number:
+    doi: "10.1109/cvpr.2019.00017"
+
+abreu2019hierarchical:
+  type: web
+  title: "Hierarchical Attentional Hybrid Neural Networks for Document Classification"
+  author:
+    - "Jader Abreu"
+    - "Luis Fred"
+    - "David Macêdo"
+    - "Cleber Zanchettin"
+  date: "2019"
+  parent:
+    type: periodical
+    title: "2019 International Conference on Artificial Neural Networks (ICANN)"
+  serial-number:
+    doi: "10.1007/978-3-030-30493-5_39"
+
+granziol2019meme:
+  type: web
+  title: "MEMe: An Accurate Maximum Entropy Method for Efficient Approximations in Large-Scale Machine Learning"
+  author:
+    - "Diego Granziol"
+    - "Binxin Ru"
+    - "Stefan Zohren"
+    - "Xiaowen Doing"
+    - "Michael Osborne"
+    - "Stephen Roberts"
+  date: "2019"
+  parent:
+    type: periodical
+    title: "MEMe: An Accurate Maximum Entropy Method for Efficient Approximations in Large-Scale Machine Learning. Entropy, 21(6), 551 (2019)"
+  serial-number:
+    doi: "10.3390/e21060551"
+
+Roesch2019RelayAH:
+  type: web
+  title: "Relay: A High-Level IR for Deep Learning"
+  author:
+    - "Jared Roesch"
+    - "Steven Lyubomirsky"
+    - "Marisa Kirisame"
+    - "Josh Pollock"
+    - "Logan Weber"
+    - "Ziheng Jiang"
+    - "Tianqi Chen"
+    - "T. Moreau"
+    - "Zachary Tatlock"
+  date: "2019"
+  parent:
+    type: periodical
+    title: "arXiv.org"
+
+feynman2020feynman:
+  type: web
+  title: "Feynman Lectures on the Strong Interactions"
+  author:
+    - "Richard P. Feynman"
+    - "James M. Cline"
+  date: "2020"
+
+Dong2020NASBench201ET:
+  type: article
+  title: "NAS-Bench-201: Extending the Scope of Reproducible Neural Architecture Search"
+  author:
+    - "Xuanyi Dong"
+    - "Yi Yang"
+  date: "2020"
+  parent:
+    type: periodical
+    title: "International Conference on Learning Representations"
+
+Bonchi2020StringDR:
+  type: article
+  title: "String Diagram Rewrite Theory I: Rewriting with Frobenius Structure"
+  author:
+    - "F. Bonchi"
+    - "F. Gadducci"
+    - "A. Kissinger"
+    - "P. Sobocinski"
+    - "F. Zanasi"
+  date: "2020"
+  parent:
+    type: periodical
+    title: "Journal of the ACM"
+  serial-number:
+    doi: "10.1145/3502719"
+
+zheng2020ansor:
+  type: web
+  title: "Ansor: Generating High-Performance Tensor Programs for Deep Learning"
+  author:
+    - "Lianmin Zheng"
+    - "Chengfan Jia"
+    - "Minmin Sun"
+    - "Zhao Wu"
+    - "Cody Hao Yu"
+    - "Ameer Haj-Ali"
+    - "Yida Wang"
+    - "Jun Yang"
+    - "Danyang Zhuo"
+    - "Koushik Sen"
+    - "Joseph E. Gonzalez"
+    - "Ion Stoica"
+  date: "2020"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2006.06762"
+
+data2020byzantineresilient:
+  type: web
+  title: "Byzantine-Resilient SGD in High Dimensions on Heterogeneous Data"
+  author:
+    - "Deepesh Data"
+    - "Suhas Diggavi"
+  date: "2020"
+
+cheli2021metatheoryjl:
+  type: article
+  title: "Metatheory.jl: Fast and Elegant Algebraic Computation in Julia with Extensible Equality Saturation"
+  author:
+    - "Alessandro Cheli"
+  date: "2021"
+  parent:
+    type: periodical
+    title: "Journal of Open Source Software"
+  serial-number:
+    doi: "10.21105/joss.03078"
+
+koehler2021sketchguided:
+  type: web
+  title: "Sketch-Guided Equality Saturation: Scaling Equality Saturation to Complex Optimizations of Functional Programs"
+  author:
+    - "Thomas Koehler"
+    - "Phil Trinder"
+    - "Michel Steuwer"
+  date: "2021"
+
+Bonchi2021StringDR:
+  type: article
+  title: "String diagram rewrite theory II: Rewriting with symmetric monoidal structure"
+  author:
+    - "F. Bonchi"
+    - "F. Gadducci"
+    - "A. Kissinger"
+    - "P. Sobocinski"
+    - "F. Zanasi"
+  date: "2021"
+  parent:
+    type: periodical
+    title: "Mathematical Structures in Computer Science"
+  serial-number:
+    doi: "10.1017/s0960129522000317"
+
+Bonchi2021StringDR:
+  type: article
+  title: "String diagram rewrite theory III: Confluence with and without Frobenius"
+  author:
+    - "F. Bonchi"
+    - "F. Gadducci"
+    - "A. Kissinger"
+    - "Pawel Soboci'nski"
+    - "F. Zanasi"
+  date: "2021"
+  parent:
+    type: periodical
+    title: "Mathematical Structures in Computer Science"
+  serial-number:
+    doi: "10.1017/s0960129522000123"
+
+Wilson2021TheCO:
+  type: article
+  title: "The Cost of Compositionality: A High-Performance Implementation of String Diagram Composition"
+  author:
+    - "Paul W. Wilson"
+    - "F. Zanasi"
+  date: "2021"
+  parent:
+    type: periodical
+    title: "ACT"
+  serial-number:
+    doi: "10.4204/eptcs.372.19"
+
+toumi2021functorial:
+  type: web
+  title: "Functorial Language Models"
+  author:
+    - "Alexis Toumi"
+    - "Alex Koziell-Pipe"
+  date: "2021"
+
+meichanetzidis2021quantum:
+  type: article
+  title: "Quantum Natural Language Processing on Near-Term Quantum Computers"
+  author:
+    - "Konstantinos Meichanetzidis"
+    - "Stefano Gogioso"
+    - "Giovanni de Felice"
+    - "Nicolò Chiappori"
+    - "Alexis Toumi"
+    - "Bob Coecke"
+  date: "2021"
+  parent:
+    type: periodical
+    title: "Electronic Proceedings in Theoretical Computer Science"
+  serial-number:
+    doi: "10.4204/eptcs.340.11"
+
+wilson2021reverse:
+  type: article
+  title: "Reverse Derivative Ascent: A Categorical Approach to Learning Boolean Circuits"
+  author:
+    - "P. Wilson"
+    - "Fabio Zanasi"
+  date: "2021"
+  parent:
+    type: periodical
+    title: "Electronic Proceedings in Theoretical Computer Science"
+  serial-number:
+    doi: "10.4204/eptcs.333.17"
+
+weinzierl2022feynman:
+  type: web
+  title: "Feynman Integrals"
+  author:
+    - "Stefan Weinzierl"
+  date: "2022"
+
+mitchell2022learning:
+  type: web
+  title: "Learning Feynman Diagrams using Graph Neural Networks"
+  author:
+    - "Harrison Mitchell"
+    - "Alexander Norcliffe"
+    - "Pietro Liò"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "NeurIPS ML4PS 2022"
+
+Milosavljevic2022StringDR:
+  type: web
+  title: "String Diagram Rewriting Modulo Commutative Monoid Structure"
+  author:
+    - "A. Milosavljevic"
+    - "F. Zanasi"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "arXiv.org"
+  serial-number:
+    doi: "10.48550/arxiv.2204.04274"
+
+toumi2022discopy:
+  type: web
+  title: "DisCoPy for the quantum computer scientist"
+  author:
+    - "Alexis Toumi"
+    - "Giovanni de Felice"
+    - "Richie Yeung"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2205.05190"
+
+toumi2022category:
+  type: web
+  title: "Category Theory for Quantum Natural Language Processing"
+  author:
+    - "Alexis Toumi"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2212.06615"
+
+felice2022categorical:
+  type: web
+  title: "Categorical Tools for Natural Language Processing"
+  author:
+    - "Giovanni de Felice"
+  date: "2022"
+
+zúñigagalindo2022padic:
+  type: web
+  title: "p-Adic Statistical Field Theory and Deep Belief Networks"
+  author:
+    - "W. A. Zúñiga-Galindo"
+  date: "2022"
+  serial-number:
+    doi: "10.1016/j.physa.2023.128492"
+
+zúñigagalindo2022padica:
+  type: article
+  title: "P-Adic Statistical Field Theory and Deep Belief Networks"
+  author:
+    - "W. A. Zúñiga‐Galindo"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "SSRN Electronic Journal"
+  serial-number:
+    doi: "10.2139/ssrn.4241508"
+
+zúñigagalindo2022padicb:
+  type: web
+  title: "p-Adic Statistical Field Theory and Deep Belief Networks"
+  author:
+    - "W. A. Zúñiga‐Galindo"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2207.13877"
+
+cruttwell2022categorical:
+  type: article
+  title: "Categorical Foundations of Gradient-Based Learning"
+  author:
+    - "G. S. H. Cruttwell"
+    - "Bruno Gavranović"
+    - "Neil Ghani"
+    - "P. Wilson"
+    - "Fabio Zanasi"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "Lecture notes in computer science"
+  serial-number:
+    doi: "10.1007/978-3-030-99336-8_1"
+
+bradley2022an:
+  type: article
+  title: "An Enriched Category Theory of Language: From Syntax to Semantics"
+  author:
+    - "Tai-Danae Bradley"
+    - "John Terilla"
+    - "Yiannis Vlassopoulos"
+  date: "2022"
+  parent:
+    type: periodical
+    title: "La Matematica"
+  serial-number:
+    doi: "10.1007/s44007-022-00021-2"
+
+zhang2023better:
+  type: article
+  title: "Better Together: Unifying Datalog and Equality Saturation"
+  author:
+    - "Yihong Zhang"
+    - "Yisu Remy Wang"
+    - "Oliver Flatt"
+    - "David Cao"
+    - "Philip Zucker"
+    - "Eli Rosenthal"
+    - "Zachary Tatlock"
+    - "Max Willsey"
+  date: "2023"
+  parent:
+    type: periodical
+    title: "Proceedings of the ACM on Programming Languages"
+  serial-number:
+    doi: "10.1145/3591239"
+
+Wu2023HectorAE:
+  type: article
+  title: "Hector: An Efficient Programming and Compilation Framework for Implementing Relational Graph Neural Networks in GPU Architectures"
+  author:
+    - "Kun Wu"
+    - "Mert Hidayetoğlu"
+    - "Xiang Song"
+    - "Sitao Huang"
+    - "Da Zheng"
+    - "Israt Nisa"
+    - "Wen-mei W. Hwu"
+  date: "2023"
+  parent:
+    type: periodical
+    title: "International Conference on Architectural Support for Programming Languages and Operating Systems"
+  serial-number:
+    doi: "10.1145/3620666.3651322"
+
+lin2023ecspmm:
+  type: article
+  title: "EC-SpMM: Efficient Compilation of SpMM Kernel on GPUs"
+  author:
+    - "J. Lin"
+    - "Honghe Zhang"
+    - "Xiaolong Shi"
+    - "Jingwei Sun"
+    - "Xianzhi Yu"
+    - "Jun Yao"
+    - "Guangzhong Sun"
+  date: "2023"
+  serial-number:
+    doi: "10.1145/3605573.3605632"
+
+ruhe2023geometric:
+  type: web
+  title: "Geometric Clifford Algebra Networks"
+  author:
+    - "David Ruhe"
+    - "Jayesh K. Gupta"
+    - "Steven De Keninck"
+    - "Max Welling"
+    - "J. Brandstetter"
+  date: "2023"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2302.06594"
+
+stein2023applying:
+  type: article
+  title: "Applying QNLP to Sentiment Analysis in Finance"
+  author:
+    - "Jonas Stein"
+    - "I. Christ"
+    - "Nicolas Kraus"
+    - "Maximilian Balthasar Mansky"
+    - "Robert Müller"
+    - "Claudia Linnhoff‐Popien"
+  date: "2023"
+  serial-number:
+    doi: "10.1109/qce57702.2023.10178"
+
+shah2023on:
+  type: web
+  title: "On Computationally Efficient Learning of Exponential Family Distributions"
+  author:
+    - "Abhin Shah"
+    - "Devavrat Shah"
+    - "Gregory W. Wornell"
+  date: "2023"
+
+lai2023relax:
+  type: web
+  title: "Relax: Composable Abstractions for End-to-End Dynamic Machine Learning"
+  author:
+    - "Ruihang Lai"
+    - "Junru Shao"
+    - "Siyuan Feng"
+    - "Steven Lyubomirsky"
+    - "Bohan Hou"
+    - "Wuwei Lin"
+    - "Zihao Ye"
+    - "Hongyi Jin"
+    - "Yuchen Jin"
+    - "Jiawei Liu"
+    - "LeSheng Jin"
+    - "Yaxing Cai"
+    - "Ziheng Jiang"
+    - "Yong Wu"
+    - "Sunghyun Park"
+    - "Prakalp Srivastava"
+    - "Jared Roesch"
+    - "Todd C. Mowry"
+    - "Tianqi Chen"
+  date: "2023"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2311.02103"
+
+hou2024feynman:
+  type: web
+  title: "Feynman Diagrams as Computational Graphs"
+  author:
+    - "Pengcheng Hou"
+    - "Tao Wang"
+    - "Daniel Cerkoney"
+    - "Xiansheng Cai"
+    - "Zhiyi Li"
+    - "Youjin Deng"
+    - "Lei Wang"
+    - "Kun Chen"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "arXiv"
+  serial-number:
+    doi: "10.48550/arXiv.2403.18840"
+
+berman2024ncoder:
+  type: web
+  title: "NCoder — A Quantum Field Theory Approach to Encoding Data"
+  author:
+    - "David S. Berman"
+    - "Marc S. Klinger"
+    - "Alexander G. Stapleton"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "Machine Learning: Science and Technology"
+  serial-number:
+    doi: "10.1088/2632-2153/ade04c"
+
+tiberi2024dynamical:
+  type: web
+  title: "Dynamical Mean-Field Theory of Self-Attention Neural Networks"
+  author:
+    - "Lorenzo Tiberi"
+    - "Francesca Mignacco"
+    - "Kazuki Nakaoka"
+    - "Sho Yaida"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "arXiv"
+
+neural2024neural:
+  type: web
+  title: "Neural network field theories: non-Gaussianity, actions, and locality"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "Machine Learning: Science and Technology"
+  serial-number:
+    doi: "10.1088/2632-2153/ad17d3"
+
+banta2024structures:
+  type: web
+  title: "Structures of neural network effective theories"
+  author:
+    - "Ian Banta"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "Physical Review D"
+  serial-number:
+    doi: "10.1103/PhysRevD.109.105007"
+
+Nie2024OPASSOT:
+  type: article
+  title: "OPASS: Orchestrating TVM's Passes for Lowering Memory Footprints of Computation Graphs"
+  author:
+    - "Pengbo Nie"
+    - "Zihan Wang"
+    - "Chengcheng Wan"
+    - "Ziyi Lin"
+    - "He Jiang"
+    - "Jianjun Zhao"
+    - "Yuting Chen"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "IEEE International Conference on Software Maintenance and Evolution"
+  serial-number:
+    doi: "10.1109/icsme58944.2024.00026"
+
+spinner2024lorentzequivariant:
+  type: web
+  title: "Lorentz-Equivariant Geometric Algebra Transformers for High-Energy Physics"
+  author:
+    - "Jonas Spinner"
+    - "Víctor Bresó"
+    - "Pim de Haan"
+    - "Tilman Plehn"
+    - "Jesse Thaler"
+    - "Johann Brehmer"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2405.14806"
+
+brehmer2024a:
+  type: web
+  title: "A Lorentz-Equivariant Transformer for All of the LHC"
+  author:
+    - "Johann Brehmer"
+    - "Víctor Bresó"
+    - "Pim de Haan"
+    - "Tilman Plehn"
+    - "Huilin Qu"
+    - "Jonas Spinner"
+    - "Jesse Thaler"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2411.00446"
+
+wu2024jet:
+  type: article
+  title: "Jet tagging with more-interaction particle transformer*"
+  author:
+    - "Yifan Wu"
+    - "Kun Wang"
+    - "C. Li"
+    - "H. Qu"
+    - "Jingya Zhu"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "Chinese Physics C"
+  serial-number:
+    doi: "10.1088/1674-1137/ad7f3d"
+
+abbott2024neural:
+  type: web
+  title: "Neural Circuit Diagrams: Robust Diagrams for the Communication, Implementation, and Analysis of Deep Learning Architectures"
+  author:
+    - "Vincent Abbott"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2402.05424"
+
+crescenzi2024towards:
+  type: article
+  title: "Towards a Categorical Foundation of Deep Learning: A Survey"
+  author:
+    - "Francesco Riccardo Crescenzi"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "AMS Degree Thesis (University of Bologna)"
+  serial-number:
+    doi: "10.48550/arxiv.2410.05353"
+
+ro2024a:
+  type: web
+  title: "A categorical interpretation of Morita equivalence for dynamical von Neumann algebras"
+  author:
+    - "Joeri De Ro"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "Journal of Algebra 666 (2025), 673--702"
+  serial-number:
+    doi: "10.1016/j.jalgebra.2024.12.008"
+
+wu2024mirage:
+  type: web
+  title: "Mirage: A Multi-Level Superoptimizer for Tensor Programs"
+  author:
+    - "Mengdi Wu"
+    - "Xinhao Cheng"
+    - "Liu, Shengyu"
+    - "Shi, Chunan"
+    - "Ji, Jianan"
+    - "Ao, Kit"
+    - "Velliengiri, Praveen"
+    - "Miao, Xupeng"
+    - "Padon, Oded"
+    - "Jia, Zhihao"
+  date: "2024"
+  parent:
+    type: periodical
+    title: "arXiv (Cornell University)"
+  serial-number:
+    doi: "10.48550/arxiv.2405.05751"
+
+paeng2025folded:
+  type: web
+  title: "Folded Context Condensation in Path Integral Formalism for Infinite Context Transformers"
+  author:
+    - "Won-Gi Paeng"
+    - "Daesuk Kwon"
+    - "Kyungwon Jeong"
+    - "Honggyo Suh"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "IEEE Access"
+  serial-number:
+    doi: "10.1109/ACCESS.2025.3574857"
+
+guillen2025finitewidth:
+  type: web
+  title: "Finite-Width Neural Tangent Kernels from Feynman Diagrams"
+  author:
+    - "Max Guillen"
+    - "Philipp Misof"
+    - "Jan E. Gerken"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv"
+  serial-number:
+    doi: "10.48550/arXiv.2508.11522"
+
+integral2025integral:
+  type: web
+  title: "Integral Transformer: Denoising Attention, Not Too Much Not Too Little"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv"
+
+unified2025a:
+  type: web
+  title: "A Unified Geometric Field Theory Framework for Transformers"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv"
+
+neural2025neural:
+  type: web
+  title: "Neural scaling laws from large-N field theory"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "Machine Learning: Science and Technology"
+  serial-number:
+    doi: "10.1088/2632-2153/adc872"
+
+Zayed2025DialEggDM:
+  type: article
+  title: "DialEgg: Dialect-Agnostic MLIR Optimizer using Equality Saturation with Egglog"
+  author:
+    - "Abd-El-Aziz Zayed"
+    - "Christophe Dubach"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "IEEE/ACM International Symposium on Code Generation and Optimization"
+  serial-number:
+    doi: "10.1145/3696443.3708957"
+
+Merckx2025eqsatAE:
+  type: web
+  title: "eqsat: An Equality Saturation Dialect for Non-destructive Rewriting"
+  author:
+    - "Jules Merckx"
+    - "Alexandre Lopoukhine"
+    - "S. Coward"
+    - "Jianyi Cheng"
+    - "Bjorn De Sutter"
+    - "Tobias Grosser"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv.org"
+  serial-number:
+    doi: "10.48550/arxiv.2505.09363"
+
+Vohra2025MindTA:
+  type: article
+  title: "Mind the Abstraction Gap: Bringing Equality Saturation to Real-World ML Compilers"
+  author:
+    - "Arya Vohra"
+    - "L. Lee"
+    - "Jakub Bachurski"
+    - "O. Zinenko"
+    - "P. Phothilimthana"
+    - "Albert Cohen"
+    - "William S. Moses"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "Proc. ACM Program. Lang."
+  serial-number:
+    doi: "10.1145/3763062"
+
+Drewery2025ContextualES:
+  type: article
+  title: "Contextual Equality Saturation"
+  author:
+    - "Alexandre Drewery"
+    - "Thomas P. Jensen"
+    - "David Pichardie"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "Sensors Applications Symposium"
+  serial-number:
+    doi: "10.1007/978-3-032-07106-4_3"
+
+Robinson2025RFDETRNA:
+  type: web
+  title: "RF-DETR: Neural Architecture Search for Real-Time Detection Transformers"
+  author:
+    - "Isaac Robinson"
+    - "Peter Robicheaux"
+    - "Matvei Popov"
+    - "Deva Ramanan"
+    - "Neehar Peri"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv.org"
+  serial-number:
+    doi: "10.48550/arxiv.2511.09554"
+
+Metinov2025TheoreticalFO:
+  type: web
+  title: "Theoretical Foundations of GPU-Native Compilation for Rapid Code Iteration"
+  author:
+    - "Adilet Metinov"
+    - "Gulida M. Kudakeeva"
+    - "G. Kabaeva"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv.org"
+  serial-number:
+    doi: "10.48550/arxiv.2512.11200"
+
+Lu2025ConCoOC:
+  type: article
+  title: "ConCo: Optimizing Compilation of Concurrent Tensor Programs on Shared GPU"
+  author:
+    - "Jiamin Lu"
+    - "Jingwei Sun"
+    - "Yunlong Xu"
+    - "Peng Sun"
+    - "Guangzhong Sun"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "International Conference on Supercomputing"
+  serial-number:
+    doi: "10.1145/3721145.3735113"
+
+Wang2025MLTritonAM:
+  type: web
+  title: "ML-Triton, A Multi-Level Compilation and Language Extension to Triton GPU Programming"
+  author:
+    - "De Wang"
+    - "Wei Zhu"
+    - "Liyang Ling"
+    - "Ettore Tiotto"
+    - "Quintin Wang"
+    - "Whitney Tsang"
+    - "Julian Opperman"
+    - "Jacky Deng"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "arXiv.org"
+  serial-number:
+    doi: "10.48550/arxiv.2503.14985"
+
+choe2025maximum:
+  type: article
+  title: "Maximum Entropy Softmax Policy Gradient via Entropy Advantage Estimation"
+  author:
+    - "Jean Seong Bjorn Choe"
+    - "Jong-kook Kim"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence"
+  serial-number:
+    doi: "10.24963/ijcai.2025/552"
+
+wang2025optimizing:
+  type: article
+  title: "Optimizing Edge AI: A Comprehensive Survey on Data, Model, and System Strategies"
+  author:
+    - "Xubin Wang"
+    - "Weijia Jia"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "Qeios"
+  serial-number:
+    doi: "10.32388/izohch"
+
+abbott2025accelerating:
+  type: web
+  title: "Accelerating Machine Learning Systems via Category Theory: Applications to Spherical Attention for Gene Regulatory Networks"
+  author:
+    - "Vincent Abbott"
+    - "Kotaro Kamiya"
+    - "Gerard Glowacki"
+    - "Yu Atsumi"
+    - "Gioele Zardini"
+    - "Yoshihiro Maruyama"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "ArXiv.org"
+  serial-number:
+    doi: "10.48550/arxiv.2505.09326"
+
+alexander2025tensor:
+  type: article
+  title: "Tensor program optimization through program synthesis"
+  author:
+    - "Brauckmann, Alexander"
+  date: "2025"
+  parent:
+    type: periodical
+    title: "ERA"
+  serial-number:
+    doi: "10.7488/era/6825"
+
+choromanski2026graph:
+  type: article
+  title: "Graph Field Integrators: From Transformers to Feynman Path Integrals"
+  author:
+    - "Krzysztof Choromanski"
+  date: "2026"
+  parent:
+    type: periodical
+    title: "Princeton Discrete Math Seminar (Jan 2026)"
+
+agentic2026agentic:
+  type: web
+  title: "Agentic Diagrammatica: Towards Autonomous Symbolic Computation in High Energy Physics"
+  date: "2026"
+  parent:
+    type: periodical
+    title: "arXiv"
+
+feynmanbench2026feynmanbench:
+  type: web
+  title: "FeynmanBench: Benchmarking Multimodal LLMs on Diagrammatic Physics Reasoning"
+  date: "2026"
+  parent:
+    type: periodical
+    title: "arXiv"
+
+Brauckmann2026TensorPS:
+  type: article
+  title: "Tensor Program Superoptimization through Cost-Guided Symbolic Program Synthesis"
+  author:
+    - "Alexander Brauckmann"
+    - "A. Chaube"
+    - "J. W. D. S. Magalhães"
+    - "Elizabeth Polgreen"
+    - "Michael F. P. O'Boyle"
+  date: "2026"
+  parent:
+    type: periodical
+    title: "IEEE/ACM International Symposium on Code Generation and Optimization"
+  serial-number:
+    doi: "10.1109/cgo68049.2026.11395198"
+
+wu2026prism:
+  type: web
+  title: "Prism: Symbolic Superoptimization of Tensor Programs"
+  author:
+    - "Mengdi Wu"
+    - "Xiaoyu Jiang"
+    - "Oded Padon"
+    - "Zhihao Jia"
+  date: "2026"
+
+lin2026underdetermined:
+  type: web
+  title: "Underdetermined Blind Source Separation via Weighted Simplex Shrinkage Regularization and Quantum Deep Image Prior"
+  author:
+    - "Chia-Hsiang Lin"
+    - "Si-Sheng Young"
+  date: "2026"
+  parent:
+    type: periodical
+    title: "IEEE Transactions on Image Processing, 2026"
+  serial-number:
+    doi: "10.1109/tip.2026.3673957"
+
+sharma2026decision:
+  type: article
+  title: "Decision Control Under Structured Uncertainty Using a Quantum-Inspired Density Matrix Framework"
+  author:
+    - "Aman Sharma"
+  date: "2026"
+  serial-number:
+    doi: "10.21203/rs.3.rs-8553577/v1"
+
+zhao2026nautilus:
+  type: web
+  title: "Nautilus: An Auto-Scheduling Tensor Compiler for Efficient Tiled GPU Kernels"
+  author:
+    - "Yifan Zhao"
+    - "Yuchen Yang"
+    - "Matei Budiu"
+    - "Saša Misailovíc"
+  date: "2026"
+  parent:
+    type: periodical
+    title: "ArXiv.org"

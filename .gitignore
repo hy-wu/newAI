@@ -11,3 +11,5 @@ Feynman/*.pdf
 .na-claude.toml.lock
 na-claude.toml
 .snowcite/
+
+_*
