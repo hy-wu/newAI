@@ -45,20 +45,21 @@ class FeynmanVisualizer:
             lvl = levels[v.id]
             level_groups.setdefault(lvl, []).append(v)
 
-        # 2. Compute 2D grid coordinates (X, Y)
+        # 2. Compute 2D grid coordinates (X, Y) with generous spacing to avoid label overlap
         positions: Dict[str, Tuple[float, float]] = {}
         for lvl, group in level_groups.items():
             num_in_group = len(group)
             for idx, v in enumerate(group):
-                # Spread vertically around y=0
-                y_coord = (idx - (num_in_group - 1) / 2.0) * 1.5
-                positions[v.id] = (float(lvl * 2.5), y_coord)
+                # Spread vertically with 2.8 units spacing
+                y_coord = (idx - (num_in_group - 1) / 2.0) * 2.8
+                # Horizontal spacing scaled to 4.5 units
+                positions[v.id] = (float(lvl * 4.5), y_coord)
 
         return positions
 
     @classmethod
     def to_tikz(cls, diagram: Diagram) -> str:
-        """Generate publication-ready LaTeX tikz-feynman document code with multi-level 2D layout."""
+        """Generate publication-ready LaTeX tikz-feynman document code with non-overlapping 2D layout."""
         sorted_vertices = diagram.topological_sort()
         positions = cls._compute_2d_layout(diagram)
 
@@ -68,16 +69,24 @@ class FeynmanVisualizer:
             "  \\begin{feynman}"
         ]
 
-        # Place vertices using 2D (x, y) grid coordinates
+        # Place vertices using spacious 2D (x, y) coordinates and adaptive label positioning
         for v in sorted_vertices:
             node_label = v.id.replace("_", "\\_")
             op_label = v.op_type
             x, y = positions.get(v.id, (0.0, 0.0))
 
+            # Alternate label placement based on Y position to prevent text collisions
+            if y > 0.1:
+                label_pos = "above"
+            elif y < -0.1:
+                label_pos = "below"
+            else:
+                label_pos = "above right"
+
             if isinstance(v, (InputVertex, OutputVertex)):
                 lines.append(f"    \\vertex (v_{v.id}) at ({x:.2f}, {y:.2f}) {{\\small \\mathbf{{{node_label}}}}};")
             else:
-                lines.append(f"    \\node[dot, label=above:{{\\tiny {node_label} ({op_label})}}] (v_{v.id}) at ({x:.2f}, {y:.2f}) {{}};")
+                lines.append(f"    \\node[dot, label={label_pos}:{{\\tiny {node_label} ({op_label})}}] (v_{v.id}) at ({x:.2f}, {y:.2f}) {{}};")
 
         lines.append("")
         lines.append("    % Diagram Propagator Lines (Feynman Rules)")
@@ -90,7 +99,7 @@ class FeynmanVisualizer:
 
             style = "fermion"  # Standard state propagator
             if prop.label == "bypass" or "bypass" in prop.label.lower():
-                style = "scalar, dashed, bend left=45"  # Residual bypass channel (curved)
+                style = "scalar, dashed, bend left=50"  # Residual bypass channel (overhead curve)
             elif isinstance(src_v, AttentionVertex) or "attn" in src_id.lower():
                 style = "boson"  # Interaction field line (wavy line)
 
@@ -102,18 +111,18 @@ class FeynmanVisualizer:
         return "\n".join(lines)
 
     @classmethod
-    def to_svg(cls, diagram: Diagram, width: int = 960, height: int = 480) -> str:
+    def to_svg(cls, diagram: Diagram, width: int = 1100, height: int = 520) -> str:
         """Generate standalone SVG graphics with multi-level 2D layout."""
         sorted_vertices = diagram.topological_sort()
         grid_pos = cls._compute_2d_layout(diagram)
 
         # Scale 2D grid coordinates to SVG pixel space
         max_x = max(pos[0] for pos in grid_pos.values()) if grid_pos else 1.0
-        padding_x = 90
-        padding_y = 60
+        padding_x = 100
+        padding_y = 70
         scale_x = (width - 2 * padding_x) / max(max_x, 1.0)
         center_y = height / 2.0
-        scale_y = 90.0
+        scale_y = 65.0
 
         positions: Dict[str, Tuple[float, float]] = {}
         for v_id, (gx, gy) in grid_pos.items():
@@ -169,8 +178,7 @@ class FeynmanVisualizer:
 
             # Curved control points for residual bypass or multi-level offsets
             if is_bypass:
-                # Arc overhead
-                arc_height = min(src_y, dst_y) - 90.0
+                arc_height = min(src_y, dst_y) - 100.0
                 path_d = f"M {src_x} {src_y} C {src_x + 40} {arc_height}, {dst_x - 40} {arc_height}, {dst_x} {dst_y}"
                 mid_x = (src_x + dst_x) / 2.0
                 mid_y = arc_height + 14.0

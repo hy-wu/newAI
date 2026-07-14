@@ -33,7 +33,7 @@ Diagram Name: transformer_attention_formula
 
 === Physical GPU Profile (Nsight/CUDA Profiler Telemetry) ===
   Device Name:            NVIDIA GeForce RTX 5060 Ti
-  Real Kernel Latency:    0.5718 ms
+  Real Kernel Latency:    0.5267 ms
   Real Peak Memory usage: 35.88 MB
 
 Mutation History (0 steps taken):

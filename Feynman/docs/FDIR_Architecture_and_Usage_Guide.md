@@ -113,8 +113,9 @@ for (int k_tile = 0; k_tile < K_TOTAL; k_tile += 32) {
 - **模块解耦分离**：将智能决策和突变逻辑移入 `Feynman.agent` 独立包，底层编译器部分移入 `Feynman.fdir` 包；
 - **DeepSeek API 对接**：集成 `DeepSeekClient` 与 `LLMDesignAgent`，跑通了包含真实 GPU 执行数据反馈的闭环优化流程；
 - **分析制品生成器**：新增 `generate_analysis_artifacts.py` 示例程序，一键编译导出 FDIR 分析制品（包括 LaTeX .tex / .pdf 费曼图、SVG 矢量图、HTML 网页、`formula_math.md` Markdown 数学公式描述、DSL 代码、CUDA Tile IR 和 Triton Kernel 汇编与性能指标文件）。
-- **二维分层布局算法**：更新了 `visualizer.py` 的 `_compute_2d_layout()` 逻辑，按拓扑深度与垂直排布计算 (X, Y) 坐标，消除原本节点重叠在一条直线上的现象，并将残差旁路渲染为弧形曲线。
+- **二维分层与自适应标签排布**：扩展了 `visualizer.py` 中的横向与纵向间距（横向间距 4.5，纵向间距 2.8），并按 Y 轴正负位置自适应决定 TikZ 节点的 label 标注方位（`above` / `below`），消除节点标签文本重叠碰撞问题。
 - **词汇优化**：全量清理说明文档中的夸大词汇（如“全量”、“严格”、“完美”、“极致”、“零损”），转为更客观的陈述。
+
 
 
 ---
