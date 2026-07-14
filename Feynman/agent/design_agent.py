@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Tuple
 from enum import Enum, auto
 import copy
+import torch
 
 from Feynman.fdir.diagram import Diagram
 from Feynman.fdir.nodes import (
@@ -23,6 +24,8 @@ from Feynman.fdir.evaluation import (
     ModelPerformanceEvaluator, InfraPerformanceEvaluator, HardwareSpec
 )
 from Feynman.fdir.rewriter import RewriteEngine
+from Feynman.fdir.lowering import TorchLowering
+from .profiler_runner import GPUProfiler
 
 
 class MutationType(Enum):
@@ -54,6 +57,7 @@ class Observation:
     performance: DualPerformanceReport
     mutation_history: List[str]
     step: int
+    physical_gpu_metrics: Optional[Dict[str, Any]] = None
 
     def to_prompt_context(self) -> str:
         """Serialize observation into a formatted prompt context for LLM agents."""
@@ -65,9 +69,22 @@ class Observation:
             f"  Vertex Types:     {self.diagram_summary['vertex_type_counts']}",
             "",
             str(self.performance),
+        ]
+
+        if self.physical_gpu_metrics:
+            m = self.physical_gpu_metrics
+            lines.append("=== Physical GPU Profile (Nsight/CUDA Profiler Telemetry) ===")
+            if "error" in m:
+                lines.append(f"  Profiling Error: {m['error']}")
+            else:
+                lines.append(f"  Device Name:            {m.get('cuda_device')}")
+                lines.append(f"  Real Kernel Latency:    {m.get('latency_ms', 0.0):.4f} ms")
+                lines.append(f"  Real Peak Memory usage: {m.get('peak_memory_mb', 0.0):.2f} MB")
+
+        lines.extend([
             "",
             f"Mutation History ({len(self.mutation_history)} steps taken):",
-        ]
+        ])
         for i, m in enumerate(self.mutation_history[-5:], 1):
             lines.append(f"  {i}. {m}")
         return "\n".join(lines)
@@ -81,7 +98,8 @@ class DesignAgentInterface:
 
     def __init__(self, diagram: Diagram,
                  env: Optional[Dict[str, int]] = None,
-                 hardware: Optional[HardwareSpec] = None):
+                 hardware: Optional[HardwareSpec] = None,
+                 profiling_inputs: Optional[List[torch.Tensor]] = None):
         self.original_diagram = copy.deepcopy(diagram)
         self.diagram = copy.deepcopy(diagram)
         self.env = env or {}
@@ -89,6 +107,7 @@ class DesignAgentInterface:
         self.rewriter = RewriteEngine()
         self.mutation_history: List[str] = []
         self.step = 0
+        self.profiling_inputs = profiling_inputs
 
     def reset(self, diagram: Optional[Diagram] = None) -> Observation:
         if diagram is not None:
@@ -101,11 +120,22 @@ class DesignAgentInterface:
     def observe(self) -> Observation:
         perf = self.evaluator.evaluate(self.diagram)
         summary = self._diagram_summary()
+
+        # Gather physical hardware GPU profile if inputs are provided
+        gpu_metrics = None
+        if self.profiling_inputs is not None and GPUProfiler.is_gpu_available():
+            try:
+                module = TorchLowering().lower(self.diagram)
+                gpu_metrics = GPUProfiler.profile_module(module, self.profiling_inputs)
+            except Exception as e:
+                gpu_metrics = {"error": f"Failed to run physical profile: {e}"}
+
         return Observation(
             diagram_summary=summary,
             performance=perf,
             mutation_history=list(self.mutation_history),
             step=self.step,
+            physical_gpu_metrics=gpu_metrics,
         )
 
     def mutate(self, action: MutationAction) -> Observation:

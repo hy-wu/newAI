@@ -169,3 +169,29 @@ class TestDesignAgentInterface:
         obs_reset = agent_env.reset()
         assert obs_reset.step == 0
         assert len(obs_reset.mutation_history) == 0
+
+    def test_gpu_profiler_telemetry(self):
+        from Feynman.agent.profiler_runner import GPUProfiler
+        d = FormulaMapper.attention_formula_to_diagram(B=2, S=16, D=64)
+        
+        # Test basic availability check
+        is_avail = GPUProfiler.is_gpu_available()
+        assert isinstance(is_avail, bool)
+
+        # Profile lowered module
+        module = TorchLowering().lower(d)
+        x = torch.randn(2, 16, 64)
+        wq = torch.randn(64, 64)
+        wk = torch.randn(64, 64)
+        wv = torch.randn(64, 64)
+        inputs = [x, wq, wk, wv]
+
+        res = GPUProfiler.profile_module(module, inputs, num_warmup=2, num_steps=5)
+        assert isinstance(res, dict)
+        if is_avail:
+            assert "latency_ms" in res
+            assert "peak_memory_mb" in res
+            assert res["latency_ms"] >= 0.0
+        else:
+            assert "error" in res
+
