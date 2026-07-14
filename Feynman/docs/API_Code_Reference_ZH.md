@@ -26,8 +26,8 @@
    - 3.2 物理 GPU 性能分析器 (`profiler_runner.py`)
    - 3.3 DeepSeek LLM API 客户端 (`llm_client.py`)
    - 3.4 DeepSeek 驱动的自主架构设计 Agent (`fdir_agent.py`)
-4. [更新日志](#4-更新日志)
-5. [常见问题与抗鲁棒性设计](#5-常见问题与抗鲁棒性设计)
+4. [常见问题与抗鲁棒性设计](#4-常见问题与抗鲁棒性设计)
+5. [更新日志与演进待办 (Roadmap & Changelog)](#5-更新日志与演进待办-roadmap--changelog)
 
 ---
 
@@ -61,7 +61,8 @@ Feynman/
 ├── examples/                       # 端到端例程
 │   ├── transformer_block.py        # 基础 Transformer 模块建构与验证
 │   ├── closed_loop_ecosystem_demo.py # 多模态闭环矩阵全链路 Demo
-│   └── llm_agent_deepseek_demo.py  # 接入 DeepSeek API 与 GPU 物理遥测的优化 Demo
+│   ├── llm_agent_deepseek_demo.py  # 接入 DeepSeek API 与 GPU 物理遥测的优化 Demo
+│   └── generate_analysis_artifacts.py # 分析制品一键生成器例程
 │
 └── tests/                          # pytest 测试套件 (26/26 单元测试)
     ├── test_feynman_ir.py
@@ -223,24 +224,17 @@ Feynman/
 
 ---
 
-## 4. 更新日志
-
-### 2026-07-14 架构解耦与 GPU 硬件性能分析集成
-- **架构解耦**：将上层智能决策与动作逻辑分离到独立包 `Feynman.agent` 中，保持底层编译器引擎 `Feynman.fdir` 的独立性与复用性。
-- **物理 GPU 遥测**：新增 `profiler_runner.py` 模块，通过 PyTorch CUDA Events 与 max_memory_allocated API 抓取底层真实执行时间和显存开销。
-- **Agent API 集成**：编写了 `llm_client.py` 接入 `.env` 中的 DeepSeek API 密钥，实现真实闭环 LLM 架构寻优逻辑，同步更新测试套件（26/26 成功运行）。
-- **分析制品生成器**：新增 `generate_analysis_artifacts.py` 示例程序，一键式编译并生成 FDIR 分析制品（包括 LaTeX .tex / .pdf 费曼图、SVG 矢量图、HTML 网页、`formula_math.md` Markdown 数学公式说明、DSL 代码、CUDA Tile IR 和 Triton Kernel 汇编与性能指标文件）。
-- **二维分层与自适应标签排布**：在 `visualizer.py` 中扩展了横纵向间距（横向间距 4.5，纵向间距 2.8），并根据 Y 轴正负值自适应决定 TikZ 节点标签标注位置（`above` / `below` / `above right`），解决密集标注文字相互重叠碰撞的问题。
-- **说明文档优化**：调整各文档的词汇使用，删除夸大修饰词（如“全量”、“严格”等），保持中性陈述。
-
-
-
----
-
-## 5. 常见问题与抗鲁棒性设计
+## 4. 常见问题与抗鲁棒性设计
 
 1. **为什么将 `agent/` 与 `fdir/` 分离？**
    - `fdir/` 是 AI 编译器与 IR 基础设施，不依赖任何 API 或大模型网络连接；
    - `agent/` 是上层的智能决策层。解耦后，`fdir/` 可以被任意搜索算法（如 MCTS、强化学习、贝叶斯优化）独立调用，也可以接入不同的 LLM 供应商。
 2. **符号维度在静态检查时报错的原因？**
    - 如果两个不同的符号字符串（如 `"D"` 与 `"H"`）没有在环境映射表 `env` 中显式赋值相同整数，静态检查器会自动判定它们不兼容，以避免隐式维度不匹配导致的运行时底层异常。
+
+---
+
+## 5. 更新日志与演进待办 (Roadmap & Changelog)
+
+项目的详细历史更新日志与未来演进规划待办已统一归档至独立文档，请查阅：  
+🔗 **[更新日志与演进待办汇总 (ROADMAP_CHANGELOG_ZH.md)](ROADMAP_CHANGELOG_ZH.md)**

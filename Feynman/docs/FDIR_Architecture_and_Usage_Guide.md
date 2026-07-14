@@ -26,8 +26,8 @@
 5. [自主架构设计 Agent 接口 (Autonomous Design Agent Environment)](#5-自主架构设计-agent-接口-autonomous-design-agent-environment)
    - 5.1 观察-突变循环 (`Observe-Mutate Cycle`)
    - 5.2 结构突变算子与反馈回路
-6. [更新日志 (Update Log)](#6-更新日志-update-log)
-7. [端到端 Demo 与 API 手册 (Step-by-Step API & Pipeline Demo)](#7-端到端-demo-与-api-手册-step-by-step-api--pipeline-demo)
+6. [端到端 Demo 与 API 手册 (Step-by-Step API & Pipeline Demo)](#6-端到端-demo-与-api-手册-step-by-step-api--pipeline-demo)
+7. [更新日志与演进待办 (Roadmap & Changelog)](#7-更新日志与演进待办-roadmap--changelog)
 
 ---
 
@@ -106,21 +106,7 @@ for (int k_tile = 0; k_tile < K_TOTAL; k_tile += 32) {
 
 ---
 
-## 6. 更新日志 (Update Log)
-
-### 2026-07-14 GPU 物理剖析集成与架构分层
-- **物理硬件性能测量**：增加 `profiler_runner.py` 模块，利用 PyTorch CUDA Events 和 max_memory_allocated 测量物理显卡上的实际耗时和显存；
-- **模块解耦分离**：将智能决策和突变逻辑移入 `Feynman.agent` 独立包，底层编译器部分移入 `Feynman.fdir` 包；
-- **DeepSeek API 对接**：集成 `DeepSeekClient` 与 `LLMDesignAgent`，跑通了包含真实 GPU 执行数据反馈的闭环优化流程；
-- **分析制品生成器**：新增 `generate_analysis_artifacts.py` 示例程序，一键编译导出 FDIR 分析制品（包括 LaTeX .tex / .pdf 费曼图、SVG 矢量图、HTML 网页、`formula_math.md` Markdown 数学公式描述、DSL 代码、CUDA Tile IR 和 Triton Kernel 汇编与性能指标文件）。
-- **二维分层与自适应标签排布**：扩展了 `visualizer.py` 中的横向与纵向间距（横向间距 4.5，纵向间距 2.8），并按 Y 轴正负位置自适应决定 TikZ 节点的 label 标注方位（`above` / `below`），消除节点标签文本重叠碰撞问题。
-- **词汇优化**：全量清理说明文档中的夸大词汇（如“全量”、“严格”、“完美”、“极致”、“零损”），转为更客观的陈述。
-
-
-
----
-
-## 7. 端到端 Demo 与 API 手册 (Step-by-Step API & Pipeline Demo)
+## 6. 端到端 Demo 与 API 手册 (Step-by-Step API & Pipeline Demo)
 
 运行闭环矩阵 Demo 与测试集：
 
@@ -131,3 +117,10 @@ python -m pytest Feynman/tests/ -v
 # 2. 运行端到端闭环生态 Demo
 python Feynman/examples/closed_loop_ecosystem_demo.py
 ```
+
+---
+
+## 7. 更新日志与演进待办 (Roadmap & Changelog)
+
+项目的详细历史更新日志与未来演进规划待办已统一归档至独立文档，请查阅：  
+🔗 **[更新日志与演进待办汇总 (ROADMAP_CHANGELOG_ZH.md)](ROADMAP_CHANGELOG_ZH.md)**
