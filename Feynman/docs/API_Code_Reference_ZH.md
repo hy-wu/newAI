@@ -229,6 +229,7 @@ Feynman/
 - **架构解耦**：将上层智能决策与动作逻辑分离到独立包 `Feynman.agent` 中，保持底层编译器引擎 `Feynman.fdir` 的独立性与复用性。
 - **物理 GPU 遥测**：新增 `profiler_runner.py` 模块，通过 PyTorch CUDA Events 与 max_memory_allocated API 抓取底层真实执行时间和显存开销。
 - **Agent API 集成**：编写了 `llm_client.py` 接入 `.env` 中的 DeepSeek API 密钥，实现真实闭环 LLM 架构寻优逻辑，同步更新测试套件（26/26 成功运行）。
+- **分析制品生成器**：新增 `generate_analysis_artifacts.py` 示例程序，一键式编译并生成 FDIR 分析制品（包括 LaTeX .tex / .pdf 费曼图、SVG 矢量图、HTML 网页、数学公式说明、DSL 代码、CUDA Tile IR 和 Triton Kernel 汇编与性能指标文件）。
 - **说明文档优化**：调整各文档的词汇使用，删除夸大修饰词（如“全量”、“严格”等），保持中性陈述。
 
 ---

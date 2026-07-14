@@ -112,6 +112,7 @@ for (int k_tile = 0; k_tile < K_TOTAL; k_tile += 32) {
 - **物理硬件性能测量**：增加 `profiler_runner.py` 模块，利用 PyTorch CUDA Events 和 max_memory_allocated 测量物理显卡上的实际耗时和显存；
 - **模块解耦分离**：将智能决策和突变逻辑移入 `Feynman.agent` 独立包，底层编译器部分移入 `Feynman.fdir` 包；
 - **DeepSeek API 对接**：集成 `DeepSeekClient` 与 `LLMDesignAgent`，跑通了包含真实 GPU 执行数据反馈的闭环优化流程；
+- **分析制品生成器**：新增 `generate_analysis_artifacts.py` 示例程序，一键编译导出 FDIR 分析制品（包括 LaTeX .tex / .pdf 费曼图、SVG 矢量图、HTML 网页、数学公式描述、DSL 代码、CUDA Tile IR 和 Triton Kernel 汇编与性能指标文件）。
 - **词汇优化**：全量清理说明文档中的夸大词汇（如“全量”、“严格”、“完美”、“极致”、“零损”），转为更客观的陈述。
 
 ---
