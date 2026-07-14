@@ -10,15 +10,15 @@
 对 `llm-architecture-gallery/models.yml` 及 82 份 WebP 物理架构拓扑图的分析表明，现代大语言模型（LLM）已从早期单一的标准 MHA + Dense Feed-Forward Transformer 演变为以下 **四大计算拓扑范式**：
 
 ```mermaid
-graph TD
-    Gallery["LLM Architecture Gallery (83 Models)"] --> DenseT["1. 密集型 Transformer (Dense)"]
-    Gallery --> MoET["2. 混合专家网络 (Sparse MoE / Fine-grained)"]
-    Gallery --> AttnVar["3. 低秩潜空间与高效注意力 (MLA / CSA / SWA)"]
-    Gallery --> SSMHybrid["4. 状态空间与线性循环 (SSM / Mamba Hybrid)"]
+flowchart TD
+    Gallery["LLM Architecture Gallery - 83 Models"] --> DenseT["1. 密集型 Transformer - Dense"]
+    Gallery --> MoET["2. 混合专家网络 - Sparse MoE / Fine-grained"]
+    Gallery --> AttnVar["3. 低秩潜空间与高效注意力 - MLA / CSA / SWA"]
+    Gallery --> SSMHybrid["4. 状态空间与线性循环 - SSM / Mamba Hybrid"]
 
     DenseT -->|代表模型| LLaMA3["LLaMA 3/3.2, Qwen 3 Dense, Phi-4, Gemma 3"]
     MoET -->|代表模型| DeepSeekV3["DeepSeek V3/R1, Qwen 3 MoE, Mixtral 8x7B, Kimi K2"]
-    AttnVar -->|代表模型| DeepSeekV4["DeepSeek V3.2/V4 (MLA+CSA+mHC), Mistral SWA"]
+    AttnVar -->|代表模型| DeepSeekV4["DeepSeek V3.2/V4, Mistral SWA"]
     SSMHybrid -->|代表模型| Nemotron3["Nemotron 3 Nano, Mamba-2, LFM 2.5, xLSTM"]
 ```
 
@@ -107,22 +107,20 @@ class FormulaMapper:
 ## 5. 分阶段实施路线图 (Phase-by-Phase Implementation Roadmap)
 
 ```mermaid
-gantt
-    title FDIR 基于 LLM Architecture Gallery 的实施路线图
-    dateFormat  YYYY-MM-DD
-    section Phase 1: 核心算子扩展
-    新增 MoEVertex/MLAVertex/QKNormVertex       :p1_1, 2026-07-15, 3d
-    扩展 ShapeTypeChecker 维度守恒律           :p1_2, after p1_1, 2d
-    section Phase 2: Spec 自动化解析器
-    实现 models.yml 自动构建 Diagram AST        :p2_1, after p1_2, 3d
-    新增 SOTA 模型库 (LLaMA3/DeepSeekV3/Gemma3) :p2_2, after p2_1, 2d
-    section Phase 3: 多范式下发与 Tile 编译器
-    扩充 CUDA Tile IR 与 Triton 算子降级        :p3_1, after p2_2, 4d
-    升级 DualEvaluator KV 显存与 Active 参数评估  :p3_2, after p3_1, 2d
-    section Phase 4: 闭环 Agent 优化验证
-    支持 DeepSeek LLM Agent 对 MoE/MLA 拓扑突变  :p4_1, after p3_2, 3d
-    输出全范式 HTML/PDF 可视化画廊              :p4_2, after p4_1, 2d
+flowchart LR
+    P1["Phase 1: 核心算子扩展<br/>(MoE/MLA/QKNorm节点)"] --> P2["Phase 2: Spec 自动化解析器<br/>(models.yml 映射)"]
+    P2 --> P3["Phase 3: 多范式下发与 Tile 编译器<br/>(CUDA Tile/Triton)"]
+    P3 --> P4["Phase 4: 闭环 Agent 调优<br/>(DeepSeek 闭环)"]
 ```
+
+| 阶段 (Phase) | 周期 | 核心建设目标 | 关键产出物 / 验证指标 |
+| :--- | :--- | :--- | :--- |
+| **Phase 1: 核心算子扩展** | Week 1 | 扩展 `MoEVertex`, `MLAVertex`, `QKNormVertex`, `SSMVertex` 基元节点 | 静态 Shape 检查器通过 83 款模型基元匹配 |
+| **Phase 2: Spec 自动化解析器** | Week 2 | 实现 `FormulaMapper.from_gallery_spec()`，解析 `models.yml` | 自动反编译拉起 DeepSeek-V3/V4, Qwen-3 等 AST |
+| **Phase 3: 异构下发与后端升级** | Week 3 | 扩充 CUDA Tile IR 与 OpenAI Triton 矩阵降级模版 | 导出针对 MoE / MLA 的高效 Tile 内核代码 |
+| **Phase 4: 全范式端到端闭环** | Week 4 | 端到端测试脚本 `llm_gallery_ecosystem_demo.py` | 运行 DeepSeek Agent 闭环优化并输出 PDF 画廊 |
+
+
 
 ### 具体阶段分解：
 

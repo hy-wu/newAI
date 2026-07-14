@@ -37,14 +37,15 @@
 FDIR 提供了一个构建在多模态表征、双重性能评估与 Agent 自动进化上的**闭环矩阵系统拓扑（Closed-Loop Ecosystem Matrix）**：
 
 ```mermaid
-graph TD
+flowchart TD
     MathFormula["数学公式 (LaTeX / Einstein)"] <-->|双向解析与生成| VisualFD["可视的深度学习费曼图 (TikZ / SVG)"]
     MathFormula <-->|双向推导| AST["FDIR AST"]
     VisualFD <-->|双向映射| AST
-    AST <-->|代码序列化/解析| Code["FDIR Code (DSL Code)"]
+    AST <-->|代码序列化与解析| Code["FDIR Code (DSL Code)"]
     AST <-->|异构编译下发| GPUIR["GPU IRs (CUDA Tile IR / Triton / PyTorch)"]
 
-    MathFormula & AST --> ModelPerf["Model Performance (算法理论与模型能力评估)"]
+    MathFormula --> ModelPerf["Model Performance (算法理论与模型能力评估)"]
+    AST --> ModelPerf
     GPUIR --> InfraPerf["Infra Performance (计算硬件层性能与效率评估)"]
 
     ModelPerf --> Agents["Design Agents (自动化设计 Agent)"]
@@ -54,6 +55,7 @@ graph TD
 
     Agents -->|生成与突变重构| Code
 ```
+
 
 ---
 
