@@ -127,6 +127,137 @@ class FormulaMapper:
         return d
 
     @staticmethod
+    def llama_architecture_to_diagram(num_layers: int = 2,
+                                      B: Union[int, str] = "B",
+                                      S: Union[int, str] = "S",
+                                      D: Union[int, str] = 4096,
+                                      num_heads: int = 32,
+                                      head_dim: int = 128,
+                                      intermediate_dim: int = 11008) -> Diagram:
+        """Build a multi-layer stacked LLaMA-style Decoder architecture Diagram AST.
+
+        Each layer contains:
+          - Input RMSNorm
+          - Q, K, V Projections & SDPA Attention Interaction
+          - Output Projection & Residual Bypass
+          - Post-Attention RMSNorm
+          - SwiGLU FFN (Gate + Up Projection, SiLU activation, Mul, Down Projection)
+          - Post-FFN Residual Bypass
+        """
+        d = Diagram(f"llama3_{num_layers}layer_architecture")
+
+        x_type = TensorType(shape=Shape((B, S, D)), dtype=DType.FLOAT32)
+        w_attn_type = TensorType(shape=Shape((D, D)), dtype=DType.FLOAT32)
+        w_ffn_type = TensorType(shape=Shape((D, intermediate_dim)), dtype=DType.FLOAT32)
+        w_down_type = TensorType(shape=Shape((intermediate_dim, D)), dtype=DType.FLOAT32)
+
+        # External Initial Input X
+        d.add_vertex(InputVertex("x_input", x_type))
+        current_state_id = "x_input"
+
+        for l in range(num_layers):
+            pfx = f"layer_{l}"
+
+            # Weights for layer l
+            d.add_vertex(InputVertex(f"{pfx}_W_q", w_attn_type))
+            d.add_vertex(InputVertex(f"{pfx}_W_k", w_attn_type))
+            d.add_vertex(InputVertex(f"{pfx}_W_v", w_attn_type))
+            d.add_vertex(InputVertex(f"{pfx}_W_o", w_attn_type))
+
+            d.add_vertex(InputVertex(f"{pfx}_W_gate", w_ffn_type))
+            d.add_vertex(InputVertex(f"{pfx}_W_up", w_ffn_type))
+            d.add_vertex(InputVertex(f"{pfx}_W_down", w_down_type))
+
+            # --- Sub-Block 1: Self Attention ---
+            # 1.1 Input RMSNorm
+            norm1_id = f"{pfx}_rms_norm1"
+            d.add_vertex(NormVertex(norm1_id, norm_type="RMSNorm"))
+            d.connect(current_state_id, norm1_id, x_type)
+
+            # 1.2 Q, K, V Projections
+            q_id, k_id, v_id = f"{pfx}_proj_Q", f"{pfx}_proj_K", f"{pfx}_proj_V"
+            d.add_vertex(ContractionVertex(q_id))
+            d.add_vertex(ContractionVertex(k_id))
+            d.add_vertex(ContractionVertex(v_id))
+
+            d.connect(norm1_id, q_id, x_type)
+            d.connect(f"{pfx}_W_q", q_id, w_attn_type)
+            d.connect(norm1_id, k_id, x_type)
+            d.connect(f"{pfx}_W_k", k_id, w_attn_type)
+            d.connect(norm1_id, v_id, x_type)
+            d.connect(f"{pfx}_W_v", v_id, w_attn_type)
+
+            # 1.3 SDPA Attention Interaction
+            attn_id = f"{pfx}_attention"
+            d.add_vertex(AttentionVertex(attn_id, num_heads=num_heads, head_dim=head_dim))
+            d.connect(q_id, attn_id, x_type)
+            d.connect(k_id, attn_id, x_type)
+            d.connect(v_id, attn_id, x_type)
+
+            # 1.4 Output Projection
+            proj_o_id = f"{pfx}_proj_O"
+            d.add_vertex(ContractionVertex(proj_o_id))
+            d.connect(attn_id, proj_o_id, x_type)
+            d.connect(f"{pfx}_W_o", proj_o_id, w_attn_type)
+
+            # 1.5 Residual Addition (Attn Bypass)
+            res1_id = f"{pfx}_res_attn"
+            d.add_vertex(ResidualVertex(res1_id))
+            d.connect(current_state_id, res1_id, x_type, label="bypass")
+            d.connect(proj_o_id, res1_id, x_type, label="attn_branch")
+
+            # --- Sub-Block 2: SwiGLU FFN ---
+            # 2.1 Post-Attn RMSNorm
+            norm2_id = f"{pfx}_rms_norm2"
+            d.add_vertex(NormVertex(norm2_id, norm_type="RMSNorm"))
+            d.connect(res1_id, norm2_id, x_type)
+
+            # 2.2 Gate & Up Projections
+            gate_id, up_id = f"{pfx}_proj_gate", f"{pfx}_proj_up"
+            d.add_vertex(ContractionVertex(gate_id))
+            d.add_vertex(ContractionVertex(up_id))
+
+            ffn_inter_type = TensorType(shape=Shape((B, S, intermediate_dim)), dtype=DType.FLOAT32)
+            d.connect(norm2_id, gate_id, x_type)
+            d.connect(f"{pfx}_W_gate", gate_id, w_ffn_type)
+            d.connect(norm2_id, up_id, x_type)
+            d.connect(f"{pfx}_W_up", up_id, w_ffn_type)
+
+            # 2.3 SiLU Activation on Gate & Multiplication (SwiGLU)
+            silu_id = f"{pfx}_silu"
+            d.add_vertex(PointwiseVertex(silu_id, sub_op="GELU"))
+            d.connect(gate_id, silu_id, ffn_inter_type)
+
+            swiglu_mul_id = f"{pfx}_swiglu_mul"
+            d.add_vertex(PointwiseVertex(swiglu_mul_id, sub_op="Mul"))
+            d.connect(silu_id, swiglu_mul_id, ffn_inter_type)
+            d.connect(up_id, swiglu_mul_id, ffn_inter_type)
+
+            # 2.4 Down Projection
+            down_id = f"{pfx}_proj_down"
+            d.add_vertex(ContractionVertex(down_id))
+            d.connect(swiglu_mul_id, down_id, ffn_inter_type)
+            d.connect(f"{pfx}_W_down", down_id, w_down_type)
+
+            # 2.5 Post-FFN Residual Addition
+            res2_id = f"{pfx}_res_ffn"
+            d.add_vertex(ResidualVertex(res2_id))
+            d.connect(res1_id, res2_id, x_type, label="bypass")
+            d.connect(down_id, res2_id, x_type, label="ffn_branch")
+
+            current_state_id = res2_id
+
+        # Final Normalization and Output
+        d.add_vertex(NormVertex("final_rms_norm", norm_type="RMSNorm"))
+        d.connect(current_state_id, "final_rms_norm", x_type)
+
+        d.add_vertex(OutputVertex("logits_out"))
+        d.connect("final_rms_norm", "logits_out", x_type)
+
+        return d
+
+
+    @staticmethod
     def diagram_to_latex(diagram: Diagram) -> str:
         """Convert an FDIR Diagram AST into an explicit LaTeX math string."""
         sorted_vertices = diagram.topological_sort()

@@ -1,0 +1,110 @@
+\documentclass[tikz, border=15pt]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+% Requires \usepackage[compat=1.1.0]{tikz-feynman}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (v_x_input) at (0.00, -19.60) {\small \mathbf{x\_input}};
+    \vertex (v_layer_0_W_q) at (0.00, -16.80) {\small \mathbf{layer\_0\_W\_q}};
+    \vertex (v_layer_0_W_k) at (0.00, -14.00) {\small \mathbf{layer\_0\_W\_k}};
+    \vertex (v_layer_0_W_v) at (0.00, -11.20) {\small \mathbf{layer\_0\_W\_v}};
+    \vertex (v_layer_0_W_o) at (0.00, -8.40) {\small \mathbf{layer\_0\_W\_o}};
+    \vertex (v_layer_0_W_gate) at (0.00, -5.60) {\small \mathbf{layer\_0\_W\_gate}};
+    \vertex (v_layer_0_W_up) at (0.00, -2.80) {\small \mathbf{layer\_0\_W\_up}};
+    \vertex (v_layer_0_W_down) at (0.00, 0.00) {\small \mathbf{layer\_0\_W\_down}};
+    \vertex (v_layer_1_W_q) at (0.00, 2.80) {\small \mathbf{layer\_1\_W\_q}};
+    \vertex (v_layer_1_W_k) at (0.00, 5.60) {\small \mathbf{layer\_1\_W\_k}};
+    \vertex (v_layer_1_W_v) at (0.00, 8.40) {\small \mathbf{layer\_1\_W\_v}};
+    \vertex (v_layer_1_W_o) at (0.00, 11.20) {\small \mathbf{layer\_1\_W\_o}};
+    \vertex (v_layer_1_W_gate) at (0.00, 14.00) {\small \mathbf{layer\_1\_W\_gate}};
+    \vertex (v_layer_1_W_up) at (0.00, 16.80) {\small \mathbf{layer\_1\_W\_up}};
+    \vertex (v_layer_1_W_down) at (0.00, 19.60) {\small \mathbf{layer\_1\_W\_down}};
+    \node[dot, label=above right:{\tiny layer\_0\_rms\_norm1 (Norm)}] (v_layer_0_rms_norm1) at (4.50, 0.00) {};
+    \node[dot, label=below:{\tiny layer\_0\_proj\_Q (Contraction)}] (v_layer_0_proj_Q) at (9.00, -2.80) {};
+    \node[dot, label=above right:{\tiny layer\_0\_proj\_K (Contraction)}] (v_layer_0_proj_K) at (9.00, 0.00) {};
+    \node[dot, label=above:{\tiny layer\_0\_proj\_V (Contraction)}] (v_layer_0_proj_V) at (9.00, 2.80) {};
+    \node[dot, label=above right:{\tiny layer\_0\_attention (Attention)}] (v_layer_0_attention) at (13.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_0\_proj\_O (Contraction)}] (v_layer_0_proj_O) at (18.00, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_0\_res\_attn (ResidualAdd)}] (v_layer_0_res_attn) at (22.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_0\_rms\_norm2 (Norm)}] (v_layer_0_rms_norm2) at (27.00, 0.00) {};
+    \node[dot, label=below:{\tiny layer\_0\_proj\_gate (Contraction)}] (v_layer_0_proj_gate) at (31.50, -1.40) {};
+    \node[dot, label=above:{\tiny layer\_0\_proj\_up (Contraction)}] (v_layer_0_proj_up) at (31.50, 1.40) {};
+    \node[dot, label=above right:{\tiny layer\_0\_silu (Pointwise)}] (v_layer_0_silu) at (36.00, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_0\_swiglu\_mul (Pointwise)}] (v_layer_0_swiglu_mul) at (40.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_0\_proj\_down (Contraction)}] (v_layer_0_proj_down) at (45.00, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_0\_res\_ffn (ResidualAdd)}] (v_layer_0_res_ffn) at (49.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_rms\_norm1 (Norm)}] (v_layer_1_rms_norm1) at (54.00, 0.00) {};
+    \node[dot, label=below:{\tiny layer\_1\_proj\_Q (Contraction)}] (v_layer_1_proj_Q) at (58.50, -2.80) {};
+    \node[dot, label=above right:{\tiny layer\_1\_proj\_K (Contraction)}] (v_layer_1_proj_K) at (58.50, 0.00) {};
+    \node[dot, label=above:{\tiny layer\_1\_proj\_V (Contraction)}] (v_layer_1_proj_V) at (58.50, 2.80) {};
+    \node[dot, label=above right:{\tiny layer\_1\_attention (Attention)}] (v_layer_1_attention) at (63.00, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_proj\_O (Contraction)}] (v_layer_1_proj_O) at (67.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_res\_attn (ResidualAdd)}] (v_layer_1_res_attn) at (72.00, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_rms\_norm2 (Norm)}] (v_layer_1_rms_norm2) at (76.50, 0.00) {};
+    \node[dot, label=below:{\tiny layer\_1\_proj\_gate (Contraction)}] (v_layer_1_proj_gate) at (81.00, -1.40) {};
+    \node[dot, label=above:{\tiny layer\_1\_proj\_up (Contraction)}] (v_layer_1_proj_up) at (81.00, 1.40) {};
+    \node[dot, label=above right:{\tiny layer\_1\_silu (Pointwise)}] (v_layer_1_silu) at (85.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_swiglu\_mul (Pointwise)}] (v_layer_1_swiglu_mul) at (90.00, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_proj\_down (Contraction)}] (v_layer_1_proj_down) at (94.50, 0.00) {};
+    \node[dot, label=above right:{\tiny layer\_1\_res\_ffn (ResidualAdd)}] (v_layer_1_res_ffn) at (99.00, 0.00) {};
+    \node[dot, label=above right:{\tiny final\_rms\_norm (Norm)}] (v_final_rms_norm) at (103.50, 0.00) {};
+    \vertex (v_logits_out) at (108.00, 0.00) {\small \mathbf{logits\_out}};
+
+    % Diagram Propagator Lines (Feynman Rules)
+    \diagram* { (v_x_input) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_rms_norm1) };
+    \diagram* { (v_layer_0_rms_norm1) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_proj_Q) };
+    \diagram* { (v_layer_0_W_q) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_0_proj_Q) };
+    \diagram* { (v_layer_0_rms_norm1) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_proj_K) };
+    \diagram* { (v_layer_0_W_k) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_0_proj_K) };
+    \diagram* { (v_layer_0_rms_norm1) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_proj_V) };
+    \diagram* { (v_layer_0_W_v) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_0_proj_V) };
+    \diagram* { (v_layer_0_proj_Q) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_attention) };
+    \diagram* { (v_layer_0_proj_K) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_attention) };
+    \diagram* { (v_layer_0_proj_V) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_attention) };
+    \diagram* { (v_layer_0_attention) -- [boson, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_proj_O) };
+    \diagram* { (v_layer_0_W_o) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_0_proj_O) };
+    \diagram* { (v_x_input) -- [scalar, dashed, bend left=50, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_res_attn) };
+    \diagram* { (v_layer_0_proj_O) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_res_attn) };
+    \diagram* { (v_layer_0_res_attn) -- [boson, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_rms_norm2) };
+    \diagram* { (v_layer_0_rms_norm2) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_proj_gate) };
+    \diagram* { (v_layer_0_W_gate) -- [fermion, edge label={\tiny $(4096, 11008)$}] (v_layer_0_proj_gate) };
+    \diagram* { (v_layer_0_rms_norm2) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_proj_up) };
+    \diagram* { (v_layer_0_W_up) -- [fermion, edge label={\tiny $(4096, 11008)$}] (v_layer_0_proj_up) };
+    \diagram* { (v_layer_0_proj_gate) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_0_silu) };
+    \diagram* { (v_layer_0_silu) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_0_swiglu_mul) };
+    \diagram* { (v_layer_0_proj_up) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_0_swiglu_mul) };
+    \diagram* { (v_layer_0_swiglu_mul) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_0_proj_down) };
+    \diagram* { (v_layer_0_W_down) -- [fermion, edge label={\tiny $(11008, 4096)$}] (v_layer_0_proj_down) };
+    \diagram* { (v_layer_0_res_attn) -- [scalar, dashed, bend left=50, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_res_ffn) };
+    \diagram* { (v_layer_0_proj_down) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_0_res_ffn) };
+    \diagram* { (v_layer_0_res_ffn) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_rms_norm1) };
+    \diagram* { (v_layer_1_rms_norm1) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_proj_Q) };
+    \diagram* { (v_layer_1_W_q) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_1_proj_Q) };
+    \diagram* { (v_layer_1_rms_norm1) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_proj_K) };
+    \diagram* { (v_layer_1_W_k) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_1_proj_K) };
+    \diagram* { (v_layer_1_rms_norm1) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_proj_V) };
+    \diagram* { (v_layer_1_W_v) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_1_proj_V) };
+    \diagram* { (v_layer_1_proj_Q) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_attention) };
+    \diagram* { (v_layer_1_proj_K) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_attention) };
+    \diagram* { (v_layer_1_proj_V) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_attention) };
+    \diagram* { (v_layer_1_attention) -- [boson, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_proj_O) };
+    \diagram* { (v_layer_1_W_o) -- [fermion, edge label={\tiny $(4096, 4096)$}] (v_layer_1_proj_O) };
+    \diagram* { (v_layer_0_res_ffn) -- [scalar, dashed, bend left=50, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_res_attn) };
+    \diagram* { (v_layer_1_proj_O) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_res_attn) };
+    \diagram* { (v_layer_1_res_attn) -- [boson, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_rms_norm2) };
+    \diagram* { (v_layer_1_rms_norm2) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_proj_gate) };
+    \diagram* { (v_layer_1_W_gate) -- [fermion, edge label={\tiny $(4096, 11008)$}] (v_layer_1_proj_gate) };
+    \diagram* { (v_layer_1_rms_norm2) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_proj_up) };
+    \diagram* { (v_layer_1_W_up) -- [fermion, edge label={\tiny $(4096, 11008)$}] (v_layer_1_proj_up) };
+    \diagram* { (v_layer_1_proj_gate) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_1_silu) };
+    \diagram* { (v_layer_1_silu) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_1_swiglu_mul) };
+    \diagram* { (v_layer_1_proj_up) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_1_swiglu_mul) };
+    \diagram* { (v_layer_1_swiglu_mul) -- [fermion, edge label={\tiny $(2, 128, 11008)$}] (v_layer_1_proj_down) };
+    \diagram* { (v_layer_1_W_down) -- [fermion, edge label={\tiny $(11008, 4096)$}] (v_layer_1_proj_down) };
+    \diagram* { (v_layer_1_res_attn) -- [scalar, dashed, bend left=50, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_res_ffn) };
+    \diagram* { (v_layer_1_proj_down) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_layer_1_res_ffn) };
+    \diagram* { (v_layer_1_res_ffn) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_final_rms_norm) };
+    \diagram* { (v_final_rms_norm) -- [fermion, edge label={\tiny $(2, 128, 4096)$}] (v_logits_out) };
+  \end{feynman}
+\end{tikzpicture}
+\end{document}

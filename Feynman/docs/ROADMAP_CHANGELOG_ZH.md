@@ -46,7 +46,12 @@
 
 ## 2. 更新日志 (Changelog)
 
+### 2026-07-14 多层流行 LLM 架构 (LLaMA-3) 验证支持
+- **多层 Transformer 架构构建**：在 `FormulaMapper` 中实现了 `llama_architecture_to_diagram()` 方法，支持构建多层堆叠的 LLaMA-3 Decoder 架构（包含前置 RMSNorm、Multi-Head SDPA Attention、SwiGLU FFN、以及双重残差旁路）。
+- **多层端到端验证例程**：新增 `llama3_multi_layer_demo.py` 验证程序，针对 2 层堆叠 LLaMA-3（45 个节点，54 组通道）进行了维度守恒检查、物理 GPU 硬件剖析、CUDA Tile IR / Triton Kernel 下发与 DeepSeek LLM 智能体优化验证。
+
 ### 2026-07-14 二维视觉排布与 Markdown 公式格式优化
+
 - **二维分层与自适应标签排布**：扩展了 `visualizer.py` 中的横向与纵向间距（横向间距 4.5，纵向间距 2.8），并按 Y 轴正负位置自适应决定 TikZ 节点的 label 标注方位（`above` / `below`），消除节点标签文本重叠碰撞问题。
 - ** Markdown 公式导出**：将公式与下标分析导出的文件修改为 Markdown 格式 (`formula_math.md`)。
 

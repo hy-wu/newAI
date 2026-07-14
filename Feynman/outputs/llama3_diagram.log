@@ -1,0 +1,1358 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  14 JUL 2026 22:05
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**llama3_diagram.tex
+(./llama3_diagram.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-04-11>
+(c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files stan
+dalone
+(c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+(c:/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(c:/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+
+(c:/texlive/2024/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count189
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count190
+\c@sapage=\count191
+
+(c:/texlive/2024/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2022/10/10 v1.3b Default configuration file for 'standalon
+e' class
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count192
+\c@section=\count193
+\c@subsection=\count194
+\c@subsubsection=\count195
+\c@paragraph=\count196
+\c@subparagraph=\count197
+\c@figure=\count198
+\c@table=\count199
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen141
+\pgfutil@tempdimb=\dimen142
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box51
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.co
+de.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen145
+\pgf@y=\dimen146
+\pgf@xa=\dimen147
+\pgf@ya=\dimen148
+\pgf@xb=\dimen149
+\pgf@yb=\dimen150
+\pgf@xc=\dimen151
+\pgf@yc=\dimen152
+\pgf@xd=\dimen153
+\pgf@yd=\dimen154
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count266
+\c@pgf@countb=\count267
+\c@pgf@countc=\count268
+\c@pgf@countd=\count269
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count270
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count271
+\pgfsyssoftpath@bigbuffer@items=\count272
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen155
+\pgfmath@count=\count273
+\pgfmath@box=\box52
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+x)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+ex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+de.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+x)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count274
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen156
+\pgf@picmaxx=\dimen157
+\pgf@picminy=\dimen158
+\pgf@picmaxy=\dimen159
+\pgf@pathminx=\dimen160
+\pgf@pathmaxx=\dimen161
+\pgf@pathminy=\dimen162
+\pgf@pathmaxy=\dimen163
+\pgf@xx=\dimen164
+\pgf@xy=\dimen165
+\pgf@yx=\dimen166
+\pgf@yy=\dimen167
+\pgf@zx=\dimen168
+\pgf@zy=\dimen169
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+e.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen170
+\pgf@path@lasty=\dimen171
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+x
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen172
+\pgf@shorten@start@additional=\dimen173
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box53
+\pgf@hbox=\box54
+\pgf@layerbox@main=\box55
+\pgf@picture@serial@count=\count275
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen174
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+ode.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen175
+\pgf@pt@y=\dimen176
+\pgf@pt@temp=\dimen177
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+de.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen178
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen179
+\pgf@sys@shading@range@num=\count276
+\pgf@shadingcount=\count277
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box56
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.te
+x
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box57
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+y
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen180
+\pgf@nodesepend=\dimen181
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+y
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen182
+\pgffor@skip=\dimen183
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
+de.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count278
+\pgfplotmarksize=\dimen184
+)
+\tikz@lastx=\dimen185
+\tikz@lasty=\dimen186
+\tikz@lastxsaved=\dimen187
+\tikz@lastysaved=\dimen188
+\tikz@lastmovetox=\dimen189
+\tikz@lastmovetoy=\dimen190
+\tikzleveldistance=\dimen191
+\tikzsiblingdistance=\dimen192
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
+\tikztreelevel=\count279
+\tikznumberofchildren=\count280
+\tikznumberofcurrentchild=\count281
+\tikz@fig@count=\count282
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count283
+\pgfmatrixcurrentcolumn=\count284
+\pgf@matrix@numberofcolumns=\count285
+)
+\tikz@expandcount=\count286
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+\sa@box=\box62
+)
+(c:/texlive/2024/texmf-dist/tex/latex/tikz-feynman/tikz-feynman.sty
+Package: tikz-feynman 2016/02/05v1.1.0Feynman diagrams with TikZ
+
+(c:/texlive/2024/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks31
+\pgfopts@list@add@b@toks=\toks32
+)
+(c:/texlive/2024/texmf-dist/tex/latex/tikz-feynman/tikzlibraryfeynman.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
+e.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen193
+\pgfarrowlength=\dimen194
+\pgfarrowwidth=\dimen195
+\pgfarrowlinewidth=\dimen196
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
+ex
+\pgfdecoratedcompleteddistance=\dimen197
+\pgfdecoratedremainingdistance=\dimen198
+\pgfdecoratedinputsegmentcompleteddistance=\dimen199
+\pgfdecoratedinputsegmentremainingdistance=\dimen256
+\pgf@decorate@distancetomove=\dimen257
+\pgf@decorate@repeatstate=\count287
+\pgfdecorationsegmentamplitude=\dimen258
+\pgfdecorationsegmentlength=\dimen259
+)
+\tikz@lib@dec@box=\box63
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.markings.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.markings.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathmorphing.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathmorphing.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathreplacing.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathreplacing.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/graphs
+/tikzlibrarygraphs.code.tex
+File: tikzlibrarygraphs.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\tikz@lib@auto@number=\count288
+\tikz@qnode@count=\count289
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.t
+ex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.g
+eometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2024/texmf-dist/tex/latex/tikz-feynman/tikzfeynman.keys.code.tex)))
+(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count290
+\l__pdf_internal_box=\box64
+)
+No file llama3_diagram.aux.
+\openout1 = `llama3_diagram.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count291
+\scratchdimen=\dimen260
+\scratchbox=\box65
+\nofMPsegments=\count292
+\nofMParguments=\count293
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen261
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
+\everyMPtoPDFconversion=\toks34
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+
+Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
+utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
+luatex=false on input line 3.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 7.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 7.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 7.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...at (0.00, -19.60) {\small \mathbf{x\_input}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...00, -16.80) {\small \mathbf{layer\_0\_W\_q}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...00, -14.00) {\small \mathbf{layer\_0\_W\_k}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...0, -11.20) {\small \mathbf{layer\_0\_W\_v}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...00, -8.40) {\small \mathbf{layer\_0\_W\_o}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ... -5.60) {\small \mathbf{layer\_0\_W\_gate}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...0, -2.80) {\small \mathbf{layer\_0\_W\_up}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ..., 0.00) {\small \mathbf{layer\_0\_W\_down}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ....00, 2.80) {\small \mathbf{layer\_1\_W\_q}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 ....00, 5.60) {\small \mathbf{layer\_1\_W\_k}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 ....00, 8.40) {\small \mathbf{layer\_1\_W\_v}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 ...00, 11.20) {\small \mathbf{layer\_1\_W\_o}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 ... 14.00) {\small \mathbf{layer\_1\_W\_gate}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 ...0, 16.80) {\small \mathbf{layer\_1\_W\_up}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 ... 19.60) {\small \mathbf{layer\_1\_W\_down}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 ...108.00, 0.00) {\small \mathbf{logits\_out}
+                                                  };
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 54.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 54.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 54.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 54.
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 55.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 55.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 55.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 56.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 56.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 56.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 57.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 57.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 57.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 58.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 58.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 58.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 59.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 59.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 59.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 60.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 60.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 60.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 61.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 61.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 61.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 62.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 62.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 62.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 63.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 63.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 63.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 64.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 64.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 64.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 65.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 65.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 65.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 66.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 66.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 66.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 67.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 67.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 67.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 68.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 68.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 68.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 69.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 69.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 69.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 70.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 70.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 70.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 71.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 71.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 71.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 72.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 72.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 72.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 73.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 73.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 73.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 74.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 74.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 74.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 75.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 75.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 75.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 76.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 76.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 76.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 77.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 77.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 77.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 78.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 78.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 78.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 79.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 79.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 79.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 80.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 80.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 80.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 81.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 81.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 81.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 82.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 82.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 82.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 83.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 83.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 83.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 84.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 84.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 84.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 85.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 85.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 85.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 86.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 86.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 86.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 87.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 87.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 87.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 88.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 88.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 88.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 89.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 89.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 89.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 90.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 90.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 90.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 91.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 91.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 91.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 92.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 92.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 92.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 93.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 93.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 93.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 94.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 94.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 94.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 95.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 95.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 95.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 96.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 96.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 96.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 97.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 97.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 97.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 98.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 98.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 98.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 99.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 99.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 99.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 100.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 100.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 100.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 101.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 101.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 101.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 102.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 102.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 102.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 103.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 103.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 103.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 104.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 104.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 104.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 105.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 105.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 105.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 106.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 106.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 106.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 107.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 107.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 107.
+
+[1
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./llama3_diagram.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-04-11>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 15714 strings out of 474050
+ 356909 string characters out of 5746298
+ 2072754 words of memory out of 5000000
+ 37885 multiletter control sequences out of 15000+600000
+ 558368 words of font info for 37 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 117i,11n,121p,438b,1781s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on llama3_diagram.pdf (1 page, 54501 bytes).
+PDF statistics:
+ 26 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

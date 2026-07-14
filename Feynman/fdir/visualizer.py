@@ -111,18 +111,27 @@ class FeynmanVisualizer:
         return "\n".join(lines)
 
     @classmethod
-    def to_svg(cls, diagram: Diagram, width: int = 1100, height: int = 520) -> str:
-        """Generate standalone SVG graphics with multi-level 2D layout."""
+    def to_svg(cls, diagram: Diagram, width: Optional[int] = None, height: Optional[int] = None) -> str:
+        """Generate standalone SVG graphics with multi-level 2D layout and dynamic canvas scaling."""
         sorted_vertices = diagram.topological_sort()
         grid_pos = cls._compute_2d_layout(diagram)
 
-        # Scale 2D grid coordinates to SVG pixel space
+        # Compute dynamic canvas dimensions if not explicitly passed
         max_x = max(pos[0] for pos in grid_pos.values()) if grid_pos else 1.0
+        max_y = max(abs(pos[1]) for pos in grid_pos.values()) if grid_pos else 1.0
+
+        if width is None:
+            width = max(1200, int((max_x / 4.5 + 2) * 170))
+        if height is None:
+            height = max(540, int((max_y / 2.8 + 2) * 140))
+
+        # Scale 2D grid coordinates to SVG pixel space
         padding_x = 100
         padding_y = 70
         scale_x = (width - 2 * padding_x) / max(max_x, 1.0)
         center_y = height / 2.0
         scale_y = 65.0
+
 
         positions: Dict[str, Tuple[float, float]] = {}
         for v_id, (gx, gy) in grid_pos.items():

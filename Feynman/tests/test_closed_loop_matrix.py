@@ -48,6 +48,12 @@ class TestFormulaMapper:
         chain = FormulaMapper.diagram_to_einsum_chain(d)
         assert "->i,j" in chain or "->" in chain
 
+    def test_llama_multi_layer_architecture(self):
+        d = FormulaMapper.llama_architecture_to_diagram(num_layers=2, B=2, S=16, D=64, num_heads=4, head_dim=16, intermediate_dim=128)
+        assert len(d.vertices) > 20  # Multi-layer stack should have 20+ vertices
+        assert d.name == "llama3_2layer_architecture"
+
+
 
 # ============================================================
 # 2. Visualizer Tests
