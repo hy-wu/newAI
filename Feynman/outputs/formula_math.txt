@@ -1,0 +1,5 @@
+LaTeX Representation:
+y = \text{LayerNorm}\left(\mathbf{x} + \text{Softmax}\left(\frac{\mathbf{x} \cdot \mathbf{W_q} \mathbf{x} \cdot \mathbf{W_k}^T}{\sqrt{d_k}}\right) \mathbf{x} \cdot \mathbf{W_v}\right)
+
+Einstein Notation Chain:
+4256768,768768->4256768; 4256768,768768->4256768; 4256768,768768->4256768

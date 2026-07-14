@@ -1,0 +1,39 @@
+=== Design Agent Observation (Step 0) ===
+Diagram Name: transformer_attention_formula
+  Vertices Count:   11
+  Propagators Count:13
+  Vertex Types:     {'InputVertex': 4, 'ContractionVertex': 3, 'AttentionVertex': 1, 'ResidualVertex': 1, 'NormVertex': 1, 'OutputVertex': 1}
+
+=== Model Performance Report ===
+  Parameters:              1,769,472
+  Activations:             786,432
+  Contraction Vertices:    3
+  Attention Vertices:      1
+  Pointwise Vertices:      0
+  Residual Connections:     1
+  Normalization Layers:     1
+  DAG Depth:               5
+  Receptive Field:         global (full sequence)
+  Parameter Efficiency:    0.4444
+  Sequence Scaling:        O(S^2 * D)
+
+=== Infra Performance Report ===
+  Total FLOPs:             4,430,757,888 (0.0044 TFLOPs)
+  HBM Traffic:             54,263,808 Bytes (0.054 GB)
+  Peak Activation Memory:  15.73 MB
+  Kernel Launches:         6
+  Arithmetic Intensity:    81.65 FLOPs/Byte
+  Est. Time (Compute):     0.0045 ms
+  Est. Time (Memory):      0.0162 ms
+  Est. Total Time:         0.0162 ms
+  Compute Utilization:     27.65%
+  Memory Utilization:      100.00%
+  Bottleneck:              memory-bound
+  Tile Config:             TILE_M=128, TILE_N=128, TILE_K=32
+
+=== Physical GPU Profile (Nsight/CUDA Profiler Telemetry) ===
+  Device Name:            NVIDIA GeForce RTX 5060 Ti
+  Real Kernel Latency:    0.5718 ms
+  Real Peak Memory usage: 35.88 MB
+
+Mutation History (0 steps taken):

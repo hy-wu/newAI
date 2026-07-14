@@ -1,0 +1,35 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+% Requires \usepackage[compat=1.1.0]{tikz-feynman}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (v_x) at (0.00, -2.25) {\small \mathbf{x}};
+    \vertex (v_W_q) at (0.00, -0.75) {\small \mathbf{W\_q}};
+    \vertex (v_W_k) at (0.00, 0.75) {\small \mathbf{W\_k}};
+    \vertex (v_W_v) at (0.00, 2.25) {\small \mathbf{W\_v}};
+    \node[dot, label=above:{\tiny proj\_Q (Contraction)}] (v_proj_Q) at (2.50, -1.50) {};
+    \node[dot, label=above:{\tiny proj\_K (Contraction)}] (v_proj_K) at (2.50, 0.00) {};
+    \node[dot, label=above:{\tiny proj\_V (Contraction)}] (v_proj_V) at (2.50, 1.50) {};
+    \node[dot, label=above:{\tiny sdpa\_attention (Attention)}] (v_sdpa_attention) at (5.00, 0.00) {};
+    \node[dot, label=above:{\tiny residual\_add (ResidualAdd)}] (v_residual_add) at (7.50, 0.00) {};
+    \node[dot, label=above:{\tiny layer\_norm (Norm)}] (v_layer_norm) at (10.00, 0.00) {};
+    \vertex (v_out) at (12.50, 0.00) {\small \mathbf{out}};
+
+    % Diagram Propagator Lines (Feynman Rules)
+    \diagram* { (v_x) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_proj_Q) };
+    \diagram* { (v_W_q) -- [fermion, edge label={\tiny $(768, 768)$}] (v_proj_Q) };
+    \diagram* { (v_x) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_proj_K) };
+    \diagram* { (v_W_k) -- [fermion, edge label={\tiny $(768, 768)$}] (v_proj_K) };
+    \diagram* { (v_x) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_proj_V) };
+    \diagram* { (v_W_v) -- [fermion, edge label={\tiny $(768, 768)$}] (v_proj_V) };
+    \diagram* { (v_proj_Q) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_sdpa_attention) };
+    \diagram* { (v_proj_K) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_sdpa_attention) };
+    \diagram* { (v_proj_V) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_sdpa_attention) };
+    \diagram* { (v_x) -- [scalar, dashed, bend left=45, edge label={\tiny $(4, 256, 768)$}] (v_residual_add) };
+    \diagram* { (v_sdpa_attention) -- [boson, edge label={\tiny $(4, 256, 768)$}] (v_residual_add) };
+    \diagram* { (v_residual_add) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_layer_norm) };
+    \diagram* { (v_layer_norm) -- [fermion, edge label={\tiny $(4, 256, 768)$}] (v_out) };
+  \end{feynman}
+\end{tikzpicture}
+\end{document}

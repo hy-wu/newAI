@@ -1,9 +1,9 @@
 """Artifacts Generator for FDIR Analysis.
 
 Runs the FDIR pipeline and generates a complete suite of analytical artifacts:
-  - feynman_diagram.tex & feynman_diagram.pdf (TikZ LaTeX)
+  - feynman_diagram.tex & feynman_diagram.pdf (TikZ LaTeX with 2D layered layout)
   - feynman_diagram.svg & feynman_diagram.html (SVG/HTML vector rendering)
-  - formula_math.txt (LaTeX formula representation and Einsum subscript chain)
+  - formula_math.md (Markdown formula report with LaTeX math blocks)
   - fdir_dsl_code.py (FDIR Python DSL serialization)
   - tile_ir_code.cu (NVIDIA CUDA Tile IR template code)
   - triton_kernel_code.py (OpenAI Triton JIT code)
@@ -48,27 +48,29 @@ def main():
     wv_val = torch.randn(768, 768)
     inputs = [x_val, wq_val, wk_val, wv_val]
 
-    # 3. Generate Math Formulas
-    print("[*] Generating formulas...")
+    # 3. Generate Math Formulas in Markdown format
+    print("[*] Generating Markdown formula report...")
     latex_formula = FormulaMapper.diagram_to_latex(d)
     einsum_chain = FormulaMapper.diagram_to_einsum_chain(d)
-    
-    formula_path = os.path.join(output_dir, "formula_math.txt")
-    with open(formula_path, "w", encoding="utf-8") as f:
-        f.write(f"LaTeX Representation:\n{latex_formula}\n\n")
-        f.write(f"Einstein Notation Chain:\n{einsum_chain}\n")
-    print(f"    -> Saved: {formula_path}")
 
-    # 4. Generate Visual Feynman Diagrams
-    print("[*] Generating visual diagrams...")
+    formula_path = os.path.join(output_dir, "formula_math.md")
+    with open(formula_path, "w", encoding="utf-8") as f:
+        f.write("# FDIR 数学公式与 Tensor Einstein Subscripts 分析报告\n\n")
+        f.write("## 1. 显式 LaTeX 数学公式\n\n")
+        f.write("$$\n" + latex_formula + "\n$$\n\n")
+        f.write("## 2. Einstein 矩阵缩并下标链 (Einstein Notation Chain)\n\n")
+        f.write("```text\n" + einsum_chain + "\n```\n")
+    print(f"    -> Saved Markdown Formula: {formula_path}")
+
+    # 4. Generate Visual Feynman Diagrams with 2D Layered Layout
+    print("[*] Generating visual diagrams (multi-level 2D layout)...")
     tikz_code = FeynmanVisualizer.to_tikz(d)
-    svg_code = FeynmanVisualizer.to_svg(d, width=900, height=400)
+    svg_code = FeynmanVisualizer.to_svg(d, width=960, height=480)
     html_code = FeynmanVisualizer.to_html(d)
 
     # Save Tex, SVG, HTML
     tex_path = os.path.join(output_dir, "feynman_diagram.tex")
     with open(tex_path, "w", encoding="utf-8") as f:
-        # Wrap TikZ code in a full standalone LaTeX document for compilation
         full_latex_doc = (
             "\\documentclass[tikz, border=10pt]{standalone}\n"
             "\\usepackage[compat=1.1.0]{tikz-feynman}\n"
@@ -90,7 +92,6 @@ def main():
     # Compile LaTeX into PDF (using pdflatex)
     print("[*] Attempting pdflatex compilation of tikz-feynman diagram...")
     try:
-        # Run pdflatex in non-interactive mode
         proc = subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", "feynman_diagram.tex"],
             cwd=output_dir,
@@ -99,10 +100,10 @@ def main():
             text=True,
             timeout=15
         )
-        if proc.returncode == 0:
+        if proc.returncode == 0 or os.path.exists(os.path.join(output_dir, "feynman_diagram.pdf")):
             print(f"    -> Compiled PDF:     {os.path.join(output_dir, 'feynman_diagram.pdf')}")
         else:
-            print("    -> [Warning] pdflatex compilation finished with errors (check if tikz-feynman is installed).")
+            print("    -> [Warning] pdflatex compilation finished with errors.")
     except Exception as e:
         print(f"    -> [Warning] pdflatex execution skipped: {e}")
 

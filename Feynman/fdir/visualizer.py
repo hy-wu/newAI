@@ -20,31 +20,69 @@ class FeynmanVisualizer:
     """Renderer for Visual Machine Learning Feynman Diagrams."""
 
     @staticmethod
-    def to_tikz(diagram: Diagram) -> str:
-        """Generate publication-ready LaTeX tikz-feynman document code."""
+    def _compute_2d_layout(diagram: Diagram) -> Dict[str, Tuple[float, float]]:
+        """Compute topological level-based 2D coordinates (level_x, rank_y) for vertices."""
         sorted_vertices = diagram.topological_sort()
+        levels: Dict[str, int] = {}
+
+        # 1. Compute horizontal level (depth)
+        for v in sorted_vertices:
+            if isinstance(v, InputVertex):
+                levels[v.id] = 0
+            else:
+                in_props = diagram.get_input_propagators(v.id)
+                if in_props:
+                    max_parent_level = max(
+                        levels.get(p.src_vertex_id, 0) for p in in_props
+                    )
+                    levels[v.id] = max_parent_level + 1
+                else:
+                    levels[v.id] = 0
+
+        # Group vertices by level
+        level_groups: Dict[int, List[Vertex]] = {}
+        for v in sorted_vertices:
+            lvl = levels[v.id]
+            level_groups.setdefault(lvl, []).append(v)
+
+        # 2. Compute 2D grid coordinates (X, Y)
+        positions: Dict[str, Tuple[float, float]] = {}
+        for lvl, group in level_groups.items():
+            num_in_group = len(group)
+            for idx, v in enumerate(group):
+                # Spread vertically around y=0
+                y_coord = (idx - (num_in_group - 1) / 2.0) * 1.5
+                positions[v.id] = (float(lvl * 2.5), y_coord)
+
+        return positions
+
+    @classmethod
+    def to_tikz(cls, diagram: Diagram) -> str:
+        """Generate publication-ready LaTeX tikz-feynman document code with multi-level 2D layout."""
+        sorted_vertices = diagram.topological_sort()
+        positions = cls._compute_2d_layout(diagram)
+
         lines = [
             "% Requires \\usepackage[compat=1.1.0]{tikz-feynman}",
             "\\begin{tikzpicture}",
             "  \\begin{feynman}"
         ]
 
-        # Map vertex types to TikZ node styles
-        # Input/Output -> plain, Vertices -> dot/blob with label
-        for idx, v in enumerate(sorted_vertices):
+        # Place vertices using 2D (x, y) grid coordinates
+        for v in sorted_vertices:
             node_label = v.id.replace("_", "\\_")
             op_label = v.op_type
-            if isinstance(v, InputVertex):
-                lines.append(f"    \\vertex (v_{v.id}) {{\\small \\mathbf{{{node_label}}}}};")
-            elif isinstance(v, OutputVertex):
-                lines.append(f"    \\vertex (v_{v.id}) {{\\small \\mathbf{{{node_label}}}}};")
+            x, y = positions.get(v.id, (0.0, 0.0))
+
+            if isinstance(v, (InputVertex, OutputVertex)):
+                lines.append(f"    \\vertex (v_{v.id}) at ({x:.2f}, {y:.2f}) {{\\small \\mathbf{{{node_label}}}}};")
             else:
-                lines.append(f"    \\node[dot, label=above:{{\\tiny {op_label}}}] (v_{v.id}) at ({idx*1.8}, 0) {{}};")
+                lines.append(f"    \\node[dot, label=above:{{\\tiny {node_label} ({op_label})}}] (v_{v.id}) at ({x:.2f}, {y:.2f}) {{}};")
 
         lines.append("")
         lines.append("    % Diagram Propagator Lines (Feynman Rules)")
 
-        # Draw propagators with style depending on line type
+        # Draw propagators with line styles
         for prop in diagram.propagators.values():
             src_id = prop.src_vertex_id
             dst_id = prop.dst_vertex_id
@@ -52,7 +90,7 @@ class FeynmanVisualizer:
 
             style = "fermion"  # Standard state propagator
             if prop.label == "bypass" or "bypass" in prop.label.lower():
-                style = "scalar, dashed"  # Residual bypass channel
+                style = "scalar, dashed, bend left=45"  # Residual bypass channel (curved)
             elif isinstance(src_v, AttentionVertex) or "attn" in src_id.lower():
                 style = "boson"  # Interaction field line (wavy line)
 
@@ -63,11 +101,23 @@ class FeynmanVisualizer:
         lines.append("\\end{tikzpicture}")
         return "\n".join(lines)
 
-    @staticmethod
-    def to_svg(diagram: Diagram, width: int = 900, height: int = 400) -> str:
-        """Generate standalone SVG graphics representation of the FDIR Diagram."""
+    @classmethod
+    def to_svg(cls, diagram: Diagram, width: int = 960, height: int = 480) -> str:
+        """Generate standalone SVG graphics with multi-level 2D layout."""
         sorted_vertices = diagram.topological_sort()
-        num_v = len(sorted_vertices)
+        grid_pos = cls._compute_2d_layout(diagram)
+
+        # Scale 2D grid coordinates to SVG pixel space
+        max_x = max(pos[0] for pos in grid_pos.values()) if grid_pos else 1.0
+        padding_x = 90
+        padding_y = 60
+        scale_x = (width - 2 * padding_x) / max(max_x, 1.0)
+        center_y = height / 2.0
+        scale_y = 90.0
+
+        positions: Dict[str, Tuple[float, float]] = {}
+        for v_id, (gx, gy) in grid_pos.items():
+            positions[v_id] = (padding_x + gx * scale_x, center_y - gy * scale_y)
 
         # Color palette per vertex type
         color_map = {
@@ -80,32 +130,6 @@ class FeynmanVisualizer:
             "Norm": "#475569",          # Gray
             "Transpose": "#0284c7",     # Sky blue
         }
-
-        # Positioning layout (left-to-right flow with vertical distribution)
-        padding_x = 80
-        step_x = (width - 2 * padding_x) / max(num_v - 1, 1)
-        center_y = height / 2.0
-
-        positions: Dict[str, Tuple[float, float]] = {}
-
-        # Layout vertices: offset inputs/outputs and bypasses
-        input_count = sum(1 for v in sorted_vertices if isinstance(v, InputVertex))
-        inp_idx = 0
-
-        for idx, v in enumerate(sorted_vertices):
-            if isinstance(v, InputVertex):
-                y_pos = center_y + (inp_idx - (input_count - 1) / 2.0) * 80.0
-                positions[v.id] = (padding_x, y_pos)
-                inp_idx += 1
-            elif isinstance(v, OutputVertex):
-                positions[v.id] = (width - padding_x, center_y)
-            else:
-                x_pos = padding_x + idx * step_x
-                # Add slight vertical offset for branching vertices
-                offset_y = 0.0
-                if "proj_K" in v.id: offset_y = -60.0
-                if "proj_V" in v.id: offset_y = 60.0
-                positions[v.id] = (x_pos, center_y + offset_y)
 
         svg_parts = [
             f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="{height}px" style="background:#0f172a; font-family: Inter, sans-serif;">',
@@ -124,7 +148,7 @@ class FeynmanVisualizer:
             '    .prop-attn { stroke: #a855f7; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }',
             '    .node-title { fill: #f8fafc; font-size: 13px; font-weight: 600; text-anchor: middle; }',
             '    .node-sub { fill: #94a3b8; font-size: 10px; text-anchor: middle; }',
-            '    .edge-label { fill: #cbd5e1; font-size: 10px; text-anchor: middle; background: #1e293b; }',
+            '    .edge-label { fill: #cbd5e1; font-size: 10px; text-anchor: middle; }',
             '  </style>',
             '  <!-- Title Banner -->',
             f'  <text x="{width/2}" y="30" fill="#e2e8f0" font-size="16" font-weight="700" text-anchor="middle">Visual Machine Learning Feynman Diagram: {diagram.name}</text>',
@@ -137,19 +161,28 @@ class FeynmanVisualizer:
             dst_x, dst_y = positions.get(prop.dst_vertex_id, (width - padding_x, center_y))
 
             cls_name = "prop-line"
-            if prop.label == "bypass" or "bypass" in prop.label.lower():
+            is_bypass = prop.label == "bypass" or "bypass" in prop.label.lower()
+            if is_bypass:
                 cls_name = "prop-bypass"
             elif "attn" in prop.src_vertex_id.lower():
                 cls_name = "prop-attn"
 
-            # Curved control points if offset
-            if abs(src_y - dst_y) > 10:
+            # Curved control points for residual bypass or multi-level offsets
+            if is_bypass:
+                # Arc overhead
+                arc_height = min(src_y, dst_y) - 90.0
+                path_d = f"M {src_x} {src_y} C {src_x + 40} {arc_height}, {dst_x - 40} {arc_height}, {dst_x} {dst_y}"
+                mid_x = (src_x + dst_x) / 2.0
+                mid_y = arc_height + 14.0
+            elif abs(src_y - dst_y) > 10:
                 path_d = f"M {src_x} {src_y} C {src_x + (dst_x - src_x)/2} {src_y}, {src_x + (dst_x - src_x)/2} {dst_y}, {dst_x} {dst_y}"
+                mid_x = (src_x + dst_x) / 2.0
+                mid_y = (src_y + dst_y) / 2.0 - 8.0
             else:
                 path_d = f"M {src_x} {src_y} L {dst_x} {dst_y}"
+                mid_x = (src_x + dst_x) / 2.0
+                mid_y = src_y - 8.0
 
-            mid_x = (src_x + dst_x) / 2.0
-            mid_y = (src_y + dst_y) / 2.0 - 8.0
             shape_text = html.escape(str(prop.tensor_type.shape))
 
             svg_parts.append(f'  <path d="{path_d}" class="{cls_name}"/>')
