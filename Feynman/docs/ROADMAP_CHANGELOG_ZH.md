@@ -42,11 +42,19 @@
 探究在 FDIR 中引入 **Dual Graph Transposition (对偶图转置算子)** 的可行性。高层拓扑优化在 Primal 图上进行，物理 HBM/SRAM 内存调度降级在 Dual 图上进行，实现双图对偶协同。
 
 
+### 1.3 基于 LLM Architecture Gallery 的 SOTA 大模型全范式计划待办
+- 详细规划请查阅新文档：🔗 **[基于 SOTA 大模型架构图谱 (LLM Architecture Gallery) 的 FDIR 实现方案计划 (LLM_Architecture_Gallery_FDIR_Plan_ZH.md)](LLM_Architecture_Gallery_FDIR_Plan_ZH.md)**
+
 ---
 
 ## 2. 更新日志 (Changelog)
 
+### 2026-07-14 SOTA 大模型架构图谱 (LLM Architecture Gallery) 方案计划制定
+- **83 款现代 LLM 架构深入分析**：调研分析了 `llm-architecture-gallery` 归档的 83 款 SOTA 模型（如 DeepSeek V3/V4/R1, Qwen 3/3.5, Gemma 3, Mixtral MoE, Nemotron 3 等）。
+- **制定扩充方案计划**：撰写并固化了独立文档 [LLM_Architecture_Gallery_FDIR_Plan_ZH.md](LLM_Architecture_Gallery_FDIR_Plan_ZH.md)，涵盖新增 5 种 Vertex 基元节点 (MoE, MLA, QKNorm, HyperConnect, SSM)、`models.yml` 自动化 Spec 解析器、KV Cache / Active Params 双重性能评估升级以及分阶段实施路线图。
+
 ### 2026-07-14 多层流行 LLM 架构 (LLaMA-3) 验证支持
+
 - **多层 Transformer 架构构建**：在 `FormulaMapper` 中实现了 `llama_architecture_to_diagram()` 方法，支持构建多层堆叠的 LLaMA-3 Decoder 架构（包含前置 RMSNorm、Multi-Head SDPA Attention、SwiGLU FFN、以及双重残差旁路）。
 - **多层端到端验证例程**：新增 `llama3_multi_layer_demo.py` 验证程序，针对 2 层堆叠 LLaMA-3（45 个节点，54 组通道）进行了维度守恒检查、物理 GPU 硬件剖析、CUDA Tile IR / Triton Kernel 下发与 DeepSeek LLM 智能体优化验证。
 
